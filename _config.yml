@@ -4,15 +4,18 @@
 
 # Site
 title: zhangqiyang的小站
-subtitle:屌丝日志
-description:
+subtitle: 追梦者
+description: 征服技术
 author: zhangqiyang
-language:
+language: zh-Hans
 timezone:
+keywords: [android, github, 技术博客, 移动开发, google]
+avatar: https://avatars2.githubusercontent.com/u/10182123?v=3&s=140
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://zhangqiyang.github.io
+url: http://zhangqiyang.ren
+enforce_ssl: zhangqiyang.ren
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -65,7 +68,12 @@ pagination_dir: page
 ## Themes: http://hexo.io/themes/
 theme: landscape
 
+plugins:
+- hexo-generator-cname
+
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo:
+    github: https://github.com/zhangqiyang/zhangqiyang.github.io.git,master
