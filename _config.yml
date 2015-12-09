@@ -75,5 +75,5 @@ plugins:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo:
-    github: https://github.com/zhangqiyang/zhangqiyang.github.io.git,master
+  repo: https://github.com/zhangqiyang/zhangqiyang.github.io.git
+  branch: master
