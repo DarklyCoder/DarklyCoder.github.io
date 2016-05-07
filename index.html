@@ -333,7 +333,7 @@
       
         
           
-            <h3 id="java_u904D_u5386Map_u96C6_u5408"><a href="#java_u904D_u5386Map_u96C6_u5408" class="headerlink" title="java遍历Map集合"></a>java遍历Map集合</h3><h4 id="u6700_u5E38_u89C4_u7684_u4E00_u79CD_u904D_u5386_u65B9_u6CD5_uFF0C_u6700_u5E38_u89C4_u5C31_u662F_u6700_u5E38_u7528_u7684_uFF0C_u867D_u7136_u4E0D_u590D_u6742_uFF0C_u4F46_u5F88_u91CD_u8981_uFF0C_u8FD9_u662F_u6211_u4EEC_u6700_u719F_u6089_u7684_uFF0C_u5C31_u4E0D_u591A_u8BF4_u4E86_uFF01_uFF01"><a href="#u6700_u5E38_u89C4_u7684_u4E00_u79CD_u904D_u5386_u65B9_u6CD5_uFF0C_u6700_u5E38_u89C4_u5C31_u662F_u6700_u5E38_u7528_u7684_uFF0C_u867D_u7136_u4E0D_u590D_u6742_uFF0C_u4F46_u5F88_u91CD_u8981_uFF0C_u8FD9_u662F_u6211_u4EEC_u6700_u719F_u6089_u7684_uFF0C_u5C31_u4E0D_u591A_u8BF4_u4E86_uFF01_uFF01" class="headerlink" title="最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！"></a>最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！</h4><pre><code>public static void work(Map&lt;String, String&gt; map) {
+            <h4 id="u6700_u5E38_u89C4_u7684_u4E00_u79CD_u904D_u5386_u65B9_u6CD5_uFF0C_u6700_u5E38_u89C4_u5C31_u662F_u6700_u5E38_u7528_u7684_uFF0C_u867D_u7136_u4E0D_u590D_u6742_uFF0C_u4F46_u5F88_u91CD_u8981_uFF0C_u8FD9_u662F_u6211_u4EEC_u6700_u719F_u6089_u7684_uFF0C_u5C31_u4E0D_u591A_u8BF4_u4E86_uFF01_uFF01"><a href="#u6700_u5E38_u89C4_u7684_u4E00_u79CD_u904D_u5386_u65B9_u6CD5_uFF0C_u6700_u5E38_u89C4_u5C31_u662F_u6700_u5E38_u7528_u7684_uFF0C_u867D_u7136_u4E0D_u590D_u6742_uFF0C_u4F46_u5F88_u91CD_u8981_uFF0C_u8FD9_u662F_u6211_u4EEC_u6700_u719F_u6089_u7684_uFF0C_u5C31_u4E0D_u591A_u8BF4_u4E86_uFF01_uFF01" class="headerlink" title="最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！"></a>最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！</h4><pre><code>public static void work(Map&lt;String, String&gt; map) {
     Collection&lt;String&gt; c = map.values();
     Iterator it = c.iterator();
     while (it.hasNext()) {
@@ -347,7 +347,7 @@
         System.out.println(map.get(s));
     }
 }
-</code></pre><h4 id="u6BD4_u8F83_u590D_u6742_u7684_u4E00_u79CD_u904D_u5386_u5728_u8FD9_u91CC_uFF0C_u5B83_u7684_u7075_u6D3B_u6027_u592A_u5F3A_u4E86_uFF0C_u60F3_u5F97_u5230_u4EC0_u4E48_u5C31_u80FD_u5F97_u5230_u4EC0_u4E48"><a href="#u6BD4_u8F83_u590D_u6742_u7684_u4E00_u79CD_u904D_u5386_u5728_u8FD9_u91CC_uFF0C_u5B83_u7684_u7075_u6D3B_u6027_u592A_u5F3A_u4E86_uFF0C_u60F3_u5F97_u5230_u4EC0_u4E48_u5C31_u80FD_u5F97_u5230_u4EC0_u4E48" class="headerlink" title="比较复杂的一种遍历在这里，它的灵活性太强了，想得到什么就能得到什么"></a>比较复杂的一种遍历在这里，它的灵活性太强了，想得到什么就能得到什么</h4><pre><code>public static void workByEntry(Map&lt;String, String&gt; map) {
+</code></pre><h4 id="u6BD4_u8F83_u590D_u6742_u7684_u4E00_u79CD_u904D_u5386_u5728_u8FD9_u91CC_uFF0C_u5B83_u7684_u7075_u6D3B_u6027_u592A_u5F3A_u4E86_uFF0C_u60F3_u5F97_u5230_u4EC0_u4E48_u5C31_u80FD_u5F97_u5230_u4EC0_u4E48_uFF01_uFF01"><a href="#u6BD4_u8F83_u590D_u6742_u7684_u4E00_u79CD_u904D_u5386_u5728_u8FD9_u91CC_uFF0C_u5B83_u7684_u7075_u6D3B_u6027_u592A_u5F3A_u4E86_uFF0C_u60F3_u5F97_u5230_u4EC0_u4E48_u5C31_u80FD_u5F97_u5230_u4EC0_u4E48_uFF01_uFF01" class="headerlink" title="比较复杂的一种遍历在这里，它的灵活性太强了，想得到什么就能得到什么！！"></a>比较复杂的一种遍历在这里，它的灵活性太强了，想得到什么就能得到什么！！</h4><pre><code>public static void workByEntry(Map&lt;String, String&gt; map) {
     Set&lt;Map.Entry&lt;String, String&gt;&gt; set = map.entrySet();
     for (Iterator&lt;Map.Entry&lt;String, String&gt;&gt; it = set.iterator(); it.hasNext();) {
         Map.Entry&lt;String, String&gt; entry = (Map.Entry&lt;String, String&gt;) it.next();
@@ -473,7 +473,7 @@
       
         
           
-            <h3 id="java_u4E2DString-format_u4F7F_u7528"><a href="#java_u4E2DString-format_u4F7F_u7528" class="headerlink" title="java中String.format使用"></a>java中String.format使用</h3><p>　　在JDK1.5中，String类增加了一个非常有用的静态函数format(String  format, Objece…  argues)，可以将各类数据格式化为字符串并输出。其中format参数指定了输出的格式，是最复杂也是最难掌握的一点，而argues则是一系列等待被格式化的对象。该函数对c语言中printf函数的用法进行了一定的模仿，因此有c语言基础的人学起来会轻松许多。下面我们着重讨论一下format 参数的格式及含义。<br>　　format参数中可以包含不需要转化的字符串，这些字符串是你写什么，最终就输出什么。同时还包含一些特殊格式的内容，来指定将哪个对象来转换，以及转换成什么形式。这种特殊的格式通通以%index$开头，index从1开始取值，表示将第index个参数拿进来进行格式化。这一点比c语言要强一点， c语言只能按照参数的顺序依次格式化，而Java可以选择第n个参数来格式化。由于该函数可以对任意一个对象进行格式化，不同的对象适用的参数也不同，因此我们下面分类来讨论。</p>
+            <p>　　在JDK1.5中，String类增加了一个非常有用的静态函数format(String  format, Objece…  argues)，可以将各类数据格式化为字符串并输出。其中format参数指定了输出的格式，是最复杂也是最难掌握的一点，而argues则是一系列等待被格式化的对象。该函数对c语言中printf函数的用法进行了一定的模仿，因此有c语言基础的人学起来会轻松许多。下面我们着重讨论一下format 参数的格式及含义。<br>　　format参数中可以包含不需要转化的字符串，这些字符串是你写什么，最终就输出什么。同时还包含一些特殊格式的内容，来指定将哪个对象来转换，以及转换成什么形式。这种特殊的格式通通以%index$开头，index从1开始取值，表示将第index个参数拿进来进行格式化。这一点比c语言要强一点， c语言只能按照参数的顺序依次格式化，而Java可以选择第n个参数来格式化。由于该函数可以对任意一个对象进行格式化，不同的对象适用的参数也不同，因此我们下面分类来讨论。</p>
 <h4 id="u5BF9_u6574_u6570_u8FDB_u884C_u683C_u5F0F_u5316_uFF1A_25_5Bindex_24_5D_5B_u6807_u8BC6_5D_5B_u6700_u5C0F_u5BBD_u5EA6_5D_u8F6C_u6362_u65B9_u5F0F"><a href="#u5BF9_u6574_u6570_u8FDB_u884C_u683C_u5F0F_u5316_uFF1A_25_5Bindex_24_5D_5B_u6807_u8BC6_5D_5B_u6700_u5C0F_u5BBD_u5EA6_5D_u8F6C_u6362_u65B9_u5F0F" class="headerlink" title="对整数进行格式化：%[index$][标识][最小宽度]转换方式"></a>对整数进行格式化：%[index$][标识][最小宽度]转换方式</h4><p>　　我们可以看到，格式化字符串由4部分组成，其中%[index$]的含义我们上面已经讲过，[最小宽度]的含义也很好理解，就是最终该整数转化的字符串最少包含多少位数字。我们来看看剩下2个部分的含义吧：</p>
 <h5 id="u6807_u8BC6_uFF1A"><a href="#u6807_u8BC6_uFF1A" class="headerlink" title="标识："></a>标识：</h5><pre><code>&apos;-&apos;    在最小宽度内左对齐，不可以与“用0填充”同时使用
 &apos;#&apos;    只适用于8进制和16进制，8进制时在结果前面增加一个0，16进制时在结果前面增加0x
@@ -483,8 +483,13 @@
 &apos;,&apos;    只适用于10进制，每3位数字之间用“，”分隔
 &apos;(&apos;    若参数是负数，则结果中不添加负号而是用圆括号把数字括起来（同‘+’具有同样的限制）
 </code></pre><h5 id="u8F6C_u6362_u65B9_u5F0F_uFF1A"><a href="#u8F6C_u6362_u65B9_u5F0F_uFF1A" class="headerlink" title="转换方式："></a>转换方式：</h5><pre><code>d-十进制   o-八进制   x或X-十六进制
-</code></pre><p>　　上面的说明过于枯燥，我们来看几个具体的例子。需要特别注意的一点是：大部分标识字符可以同时使用。<br>    System.out.println(String.format(“%1$,09d”, -3123));  //-0003,123<br>    System.out.println(String.format(“%1$9d”, -31));      //      -31<br>    System.out.println(String.format(“%1$-9d”, -31));     //-31<br>    System.out.println(String.format(“%1$(9d”, -31));     //     (31)<br>    System.out.println(String.format(“%1$#9x”, 5689));    //   0x1639</p>
-<h4 id="u5BF9_u6D6E_u70B9_u6570_u8FDB_u884C_u683C_u5F0F_u5316_uFF1A_25_5Bindex_24_5D_5B_u6807_u8BC6_5D_5B_u6700_u5C11_u5BBD_u5EA6_5D_5B-_u7CBE_u5EA6_5D_u8F6C_u6362_u65B9_u5F0F"><a href="#u5BF9_u6D6E_u70B9_u6570_u8FDB_u884C_u683C_u5F0F_u5316_uFF1A_25_5Bindex_24_5D_5B_u6807_u8BC6_5D_5B_u6700_u5C11_u5BBD_u5EA6_5D_5B-_u7CBE_u5EA6_5D_u8F6C_u6362_u65B9_u5F0F" class="headerlink" title="对浮点数进行格式化：%[index$][标识][最少宽度][.精度]转换方式"></a>对浮点数进行格式化：%[index$][标识][最少宽度][.精度]转换方式</h4><p>　　我们可以看到，浮点数的转换多了一个“精度”选项，可以控制小数点后面的位数。</p>
+</code></pre><p>　　上面的说明过于枯燥，我们来看几个具体的例子。需要特别注意的一点是：大部分标识字符可以同时使用。</p>
+<pre><code>System.out.println(String.format(&quot;%1$,09d&quot;, -3123));  //-0003,123
+System.out.println(String.format(&quot;%1$9d&quot;, -31));      //      -31
+System.out.println(String.format(&quot;%1$-9d&quot;, -31));     //-31 
+System.out.println(String.format(&quot;%1$(9d&quot;, -31));     //     (31)
+System.out.println(String.format(&quot;%1$#9x&quot;, 5689));    //   0x1639
+</code></pre><h4 id="u5BF9_u6D6E_u70B9_u6570_u8FDB_u884C_u683C_u5F0F_u5316_uFF1A_25_5Bindex_24_5D_5B_u6807_u8BC6_5D_5B_u6700_u5C11_u5BBD_u5EA6_5D_5B-_u7CBE_u5EA6_5D_u8F6C_u6362_u65B9_u5F0F"><a href="#u5BF9_u6D6E_u70B9_u6570_u8FDB_u884C_u683C_u5F0F_u5316_uFF1A_25_5Bindex_24_5D_5B_u6807_u8BC6_5D_5B_u6700_u5C11_u5BBD_u5EA6_5D_5B-_u7CBE_u5EA6_5D_u8F6C_u6362_u65B9_u5F0F" class="headerlink" title="对浮点数进行格式化：%[index$][标识][最少宽度][.精度]转换方式"></a>对浮点数进行格式化：%[index$][标识][最少宽度][.精度]转换方式</h4><p>　　我们可以看到，浮点数的转换多了一个“精度”选项，可以控制小数点后面的位数。</p>
 <h5 id="u6807_u8BC6_uFF1A-1"><a href="#u6807_u8BC6_uFF1A-1" class="headerlink" title="标识："></a>标识：</h5><pre><code>&apos;-&apos;    在最小宽度内左对齐，不可以与“用0填充”同时使用
 &apos;+&apos;    结果总是包括一个符号
 &apos;  &apos;    正值前加空格，负值前加负号
