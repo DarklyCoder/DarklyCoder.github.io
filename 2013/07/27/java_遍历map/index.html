@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="android,test," />
+  <meta name="keywords" content="java,遍历Map," />
 
 
 
@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="android test">
+<meta name="description" content="###java遍历Map集合
+####1. 最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！    public static void work(Map map) {        Collection c = map.values();        Iterator it = c.iterator();        while (it.has">
 <meta property="og:type" content="article">
-<meta property="og:title" content="android test">
-<meta property="og:url" content="http://zhangqiyang.ren/2016/03/25/android_test/index.html">
+<meta property="og:title" content="java遍历Map集合">
+<meta property="og:url" content="http://zhangqiyang.ren/2013/07/27/java_遍历map/index.html">
 <meta property="og:site_name" content="zhangqiyang的小站">
-<meta property="og:description" content="android test">
-<meta property="og:updated_time" content="2016-05-07T03:37:17.000Z">
+<meta property="og:description" content="###java遍历Map集合
+####1. 最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！    public static void work(Map map) {        Collection c = map.values();        Iterator it = c.iterator();        while (it.has">
+<meta property="og:updated_time" content="2016-05-07T09:32:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="android test">
-<meta name="twitter:description" content="android test">
+<meta name="twitter:title" content="java遍历Map集合">
+<meta name="twitter:description" content="###java遍历Map集合
+####1. 最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！    public static void work(Map map) {        Collection c = map.values();        Iterator it = c.iterator();        while (it.has">
 
 
 
@@ -111,7 +114,7 @@
   };
 </script>
 
-  <title> android test | zhangqiyang的小站 </title>
+  <title> java遍历Map集合 | zhangqiyang的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +264,7 @@
             
             
               
-                android test
+                java遍历Map集合
               
             
           </h1>
@@ -273,8 +276,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-25T19:08:20+08:00" content="2016-03-25">
-              2016-03-25
+            <time itemprop="dateCreated" datetime="2013-07-27T18:08:20+08:00" content="2013-07-27">
+              2013-07-27
             </time>
           </span>
 
@@ -287,8 +290,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -303,8 +306,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/25/android_test/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/25/android_test/" itemprop="commentsCount"></span>
+                <a href="/2013/07/27/java_遍历map/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2013/07/27/java_遍历map/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -327,7 +330,10 @@
       
 
       
-        <p>  android test</p>
+        <p>###java遍历Map集合</p>
+<p>####1. 最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！<br>    public static void work(Map<string, string=""> map) {<br>        Collection<string> c = map.values();<br>        Iterator it = c.iterator();<br>        while (it.hasNext()) {<br>            System.out.println(it.next());<br>        }<br>    }</string></string,></p>
+<p>####2. 利用keyset进行遍历,它的优点在于可以根据你所想要的key值得到你想要的 values，更具灵活性！！<br>    public static void workByKeySet(Map<string, string=""> map) {<br>        Set<string> key = map.keySet();<br>        for (Iterator it = key.iterator(); it.hasNext();) {<br>            String s = (String) it.next();<br>            System.out.println(map.get(s));<br>        }<br>    }</string></string,></p>
+<p>####3. 比较复杂的一种遍历在这里，它的灵活性太强了，想得到什么就能得到什么<br>    public static void workByEntry(Map<string, string=""> map) {<br>        Set<map.entry<string, string="">&gt; set = map.entrySet();<br>        for (Iterator<map.entry<string, string="">&gt; it = set.iterator(); it.hasNext();) {<br>            Map.Entry<string, string=""> entry = (Map.Entry<string, string="">) it.next();<br>            System.out.println(entry.getKey() + “—&gt;” + entry.getValue());<br>        }<br>    }</string,></string,></map.entry<string,></map.entry<string,></string,></p>
 
       
     </div>
@@ -349,9 +355,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/android/" rel="tag">#android</a>
+            <a href="/tags/java/" rel="tag">#java</a>
           
-            <a href="/tags/test/" rel="tag">#test</a>
+            <a href="/tags/遍历Map/" rel="tag">#遍历Map</a>
           
         </div>
       
@@ -360,8 +366,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/31/2015年终总结/" rel="next" title="2015年终总结">
-                <i class="fa fa-chevron-left"></i> 2015年终总结
+              <a href="/2013/07/27/java_String_format使用/" rel="next" title="java中String.format使用">
+                <i class="fa fa-chevron-left"></i> java中String.format使用
               </a>
             
           </div>
@@ -392,8 +398,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/25/android_test/"
-           data-title="android test" data-url="http://zhangqiyang.ren/2016/03/25/android_test/">
+      <div class="ds-thread" data-thread-key="2013/07/27/java_遍历map/"
+           data-title="java遍历Map集合" data-url="http://zhangqiyang.ren/2013/07/27/java_遍历map/">
       </div>
     
   </div>
@@ -438,7 +444,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -446,7 +452,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

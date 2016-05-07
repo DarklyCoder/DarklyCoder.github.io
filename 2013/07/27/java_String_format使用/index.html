@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="String format,java," />
 
 
 
@@ -84,15 +84,16 @@
 
 
 
-<meta name="description" content="征服技术">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zhangqiyang的小站">
-<meta property="og:url" content="http://zhangqiyang.ren/index.html">
+<meta name="description" content="###java中String.format使用　　在JDK1.5中，String类增加了一个非常有用的静态函数format(String  format, Objece…  argues)，可以将各类数据格式化为字符串并输出。其中format参数指定了输出的格式，是最复杂也是最难掌握的一点，而argues则是一系列等待被格式化的对象。该函数对c语言中printf函数的用法进行了一定的模仿，因此有c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java中String.format使用">
+<meta property="og:url" content="http://zhangqiyang.ren/2013/07/27/java_String_format使用/index.html">
 <meta property="og:site_name" content="zhangqiyang的小站">
-<meta property="og:description" content="征服技术">
+<meta property="og:description" content="###java中String.format使用　　在JDK1.5中，String类增加了一个非常有用的静态函数format(String  format, Objece…  argues)，可以将各类数据格式化为字符串并输出。其中format参数指定了输出的格式，是最复杂也是最难掌握的一点，而argues则是一系列等待被格式化的对象。该函数对c语言中printf函数的用法进行了一定的模仿，因此有c">
+<meta property="og:updated_time" content="2016-05-07T10:00:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zhangqiyang的小站">
-<meta name="twitter:description" content="征服技术">
+<meta name="twitter:title" content="java中String.format使用">
+<meta name="twitter:description" content="###java中String.format使用　　在JDK1.5中，String类增加了一个非常有用的静态函数format(String  format, Objece…  argues)，可以将各类数据格式化为字符串并输出。其中format参数指定了输出的格式，是最复杂也是最难掌握的一点，而argues则是一系列等待被格式化的对象。该函数对c语言中printf函数的用法进行了一定的模仿，因此有c">
 
 
 
@@ -110,7 +111,7 @@
   };
 </script>
 
-  <title> zhangqiyang的小站 </title>
+  <title> java中String.format使用 | zhangqiyang的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -141,9 +142,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -240,9 +239,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -262,133 +261,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2013/07/27/java_遍历map/" itemprop="url">
-                  java遍历Map集合
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2013-07-27T18:08:20+08:00" content="2013-07-27">
-              2013-07-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2013/07/27/java_遍历map/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2013/07/27/java_遍历map/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>###java遍历Map集合</p>
-<p>####1. 最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！<br>    public static void work(Map<string, string=""> map) {<br>        Collection<string> c = map.values();<br>        Iterator it = c.iterator();<br>        while (it.hasNext()) {<br>            System.out.println(it.next());<br>        }<br>    }</string></string,></p>
-<p>####2. 利用keyset进行遍历,它的优点在于可以根据你所想要的key值得到你想要的 values，更具灵活性！！<br>    public static void workByKeySet(Map<string, string=""> map) {<br>        Set<string> key = map.keySet();<br>        for (Iterator it = key.iterator(); it.hasNext();) {<br>            String s = (String) it.next();<br>            System.out.println(map.get(s));<br>        }<br>    }</string></string,></p>
-<p>####3. 比较复杂的一种遍历在这里，它的灵活性太强了，想得到什么就能得到什么<br>    public static void workByEntry(Map<string, string=""> map) {<br>        Set<map.entry<string, string="">&gt; set = map.entrySet();<br>        for (Iterator<map.entry<string, string="">&gt; it = set.iterator(); it.hasNext();) {<br>            Map.Entry<string, string=""> entry = (Map.Entry<string, string="">) it.next();<br>            System.out.println(entry.getKey() + “—&gt;” + entry.getValue());<br>        }<br>    }</string,></string,></map.entry<string,></map.entry<string,></string,></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2013/07/27/java_String_format使用/" itemprop="url">
-                  java中String.format使用
-                </a>
+                java中String.format使用
               
             
           </h1>
@@ -454,9 +327,7 @@
       
 
       
-        
-          
-            <p>###java中String.format使用<br>　　在JDK1.5中，String类增加了一个非常有用的静态函数format(String  format, Objece…  argues)，可以将各类数据格式化为字符串并输出。其中format参数指定了输出的格式，是最复杂也是最难掌握的一点，而argues则是一系列等待被格式化的对象。该函数对c语言中printf函数的用法进行了一定的模仿，因此有c语言基础的人学起来会轻松许多。下面我们着重讨论一下format 参数的格式及含义。<br>　　format参数中可以包含不需要转化的字符串，这些字符串是你写什么，最终就输出什么。同时还包含一些特殊格式的内容，来指定将哪个对象来转换，以及转换成什么形式。这种特殊的格式通通以%index$开头，index从1开始取值，表示将第index个参数拿进来进行格式化。这一点比c语言要强一点， c语言只能按照参数的顺序依次格式化，而Java可以选择第n个参数来格式化。由于该函数可以对任意一个对象进行格式化，不同的对象适用的参数也不同，因此我们下面分类来讨论。</p>
+        <p>###java中String.format使用<br>　　在JDK1.5中，String类增加了一个非常有用的静态函数format(String  format, Objece…  argues)，可以将各类数据格式化为字符串并输出。其中format参数指定了输出的格式，是最复杂也是最难掌握的一点，而argues则是一系列等待被格式化的对象。该函数对c语言中printf函数的用法进行了一定的模仿，因此有c语言基础的人学起来会轻松许多。下面我们着重讨论一下format 参数的格式及含义。<br>　　format参数中可以包含不需要转化的字符串，这些字符串是你写什么，最终就输出什么。同时还包含一些特殊格式的内容，来指定将哪个对象来转换，以及转换成什么形式。这种特殊的格式通通以%index$开头，index从1开始取值，表示将第index个参数拿进来进行格式化。这一点比c语言要强一点， c语言只能按照参数的顺序依次格式化，而Java可以选择第n个参数来格式化。由于该函数可以对任意一个对象进行格式化，不同的对象适用的参数也不同，因此我们下面分类来讨论。</p>
 <p>####1. 对整数进行格式化：%[index$][标识][最小宽度]转换方式 </p>
 <p>　　我们可以看到，格式化字符串由4部分组成，其中%[index$]的含义我们上面已经讲过，[最小宽度]的含义也很好理解，就是最终该整数转化的字符串最少包含多少位数字。我们来看看剩下2个部分的含义吧：</p>
 <p>#####标识：<br>    ‘-‘    在最小宽度内左对齐，不可以与“用0填充”同时使用<br>    ‘#’    只适用于8进制和16进制，8进制时在结果前面增加一个0，16进制时在结果前面增加0x<br>    ‘+’    结果总是包括一个符号（一般情况下只适用于10进制，若对象为BigInteger才可以用于8进制和16进制）<br>    ‘  ‘    正值前加空格，负值前加负号（一般情况下只适用于10进制，若对象为BigInteger才可以用于8进制和16进制）<br>    ‘0’    结果将用零来填充<br>    ‘,’    只适用于10进制，每3位数字之间用“，”分隔<br>    ‘(‘    若参数是负数，则结果中不添加负号而是用圆括号把数字括起来（同‘+’具有同样的限制）</p>
@@ -478,36 +349,60 @@ System.out.println(String.format(&quot;%1$#9x&quot;, 5689));    //   0x1639
 <p>#####以下转换字符用来格式化日期：<br>    ‘B’     特定于语言环境的月份全称，例如 “January” 和 “February”。<br>    ‘b’     特定于语言环境的月份简称，例如 “Jan” 和 “Feb”。<br>    ‘h’     与 ‘b’ 相同。<br>    ‘A’     特定于语言环境的星期几全称，例如 “Sunday” 和 “Monday”<br>    ‘a’     特定于语言环境的星期几简称，例如 “Sun” 和 “Mon”<br>    ‘C’     除以 100 的四位数表示的年份，被格式化为必要时带前导零的两位数，即 00 - 99<br>    ‘Y’     年份，被格式化为必要时带前导零的四位数（至少），例如，0092 等于格里高利历的 92 CE。<br>    ‘y’     年份的最后两位数，被格式化为必要时带前导零的两位数，即 00 - 99。<br>    ‘j’     一年中的天数，被格式化为必要时带前导零的三位数，例如，对于格里高利历是 001 - 366。<br>    ‘m’     月份，被格式化为必要时带前导零的两位数，即 01 - 13。<br>    ‘d’     一个月中的天数，被格式化为必要时带前导零两位数，即 01 - 31<br>    ‘e’     一个月中的天数，被格式化为两位数，即 1 - 31。</p>
 <p>#####以下转换字符用于格式化常见的日期/时间组合。<br>    ‘R’     24 小时制的时间，被格式化为 “%tH:%tM”<br>    ‘T’     24 小时制的时间，被格式化为 “%tH:%tM:%tS”。<br>    ‘r’     12 小时制的时间，被格式化为 “%tI:%tM:%tS %Tp”。上午或下午标记 (‘%Tp’) 的位置可能与语言环境有关。<br>    ‘D’     日期，被格式化为 “%tm/%td/%ty”。<br>    ‘F’     ISO 8601 格式的完整日期，被格式化为 “%tY-%tm-%td”。<br>    ‘c’     日期和时间，被格式化为 “%ta %tb %td %tT %tZ %tY”，例如 “Sun Jul 20 16:17:00 EDT 1969”。</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/String-format/" rel="tag">#String format</a>
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/07/27/java_遍历map/" rel="prev" title="java遍历Map集合">
+                java遍历Map集合 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -515,6 +410,14 @@ System.out.println(String.format(&quot;%1$#9x&quot;, 5689));    //   0x1639
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2013/07/27/java_String_format使用/"
+           data-title="java中String.format使用" data-url="http://zhangqiyang.ren/2013/07/27/java_String_format使用/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -534,8 +437,17 @@ System.out.println(String.format(&quot;%1$#9x&quot;, 5689));    //   0x1639
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars2.githubusercontent.com/u/10182123?v=3&s=140"
@@ -605,6 +517,17 @@ System.out.println(String.format(&quot;%1$#9x&quot;, 5689));    //   0x1639
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -701,6 +624,10 @@ System.out.println(String.format(&quot;%1$#9x&quot;, 5689));    //   0x1639
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
