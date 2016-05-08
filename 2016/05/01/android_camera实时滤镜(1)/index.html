@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="android,camera,实时滤镜," />
 
 
 
@@ -84,15 +84,29 @@
 
 
 
-<meta name="description" content="征服技术">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zhangqiyang的小站">
-<meta property="og:url" content="http://zhangqiyang.ren/index.html">
+<meta name="description" content="本文参考Android图像处理之实时滤镜
+相关知识：android-gpuimage/OpenGL
+　　目前Android平台优质的预览数据实时处理开源代码不多，例如android-gpuimage，采用将YUV数据在NDK层转化为RGB数据，由OpenGL渲染到屏幕中，滤镜算法由Shader实现。其他方面，经过研究，目前主要有以下思路实现：
+
+不转换，直接由OpenGL绘制，采用Shader实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android_camera实时滤镜(1)">
+<meta property="og:url" content="http://zhangqiyang.ren/2016/05/01/android_camera实时滤镜(1)/index.html">
 <meta property="og:site_name" content="zhangqiyang的小站">
-<meta property="og:description" content="征服技术">
+<meta property="og:description" content="本文参考Android图像处理之实时滤镜
+相关知识：android-gpuimage/OpenGL
+　　目前Android平台优质的预览数据实时处理开源代码不多，例如android-gpuimage，采用将YUV数据在NDK层转化为RGB数据，由OpenGL渲染到屏幕中，滤镜算法由Shader实现。其他方面，经过研究，目前主要有以下思路实现：
+
+不转换，直接由OpenGL绘制，采用Shader实现">
+<meta property="og:image" content="http://img.blog.csdn.net/20151126123806218?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2016-05-08T14:44:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zhangqiyang的小站">
-<meta name="twitter:description" content="征服技术">
+<meta name="twitter:title" content="android_camera实时滤镜(1)">
+<meta name="twitter:description" content="本文参考Android图像处理之实时滤镜
+相关知识：android-gpuimage/OpenGL
+　　目前Android平台优质的预览数据实时处理开源代码不多，例如android-gpuimage，采用将YUV数据在NDK层转化为RGB数据，由OpenGL渲染到屏幕中，滤镜算法由Shader实现。其他方面，经过研究，目前主要有以下思路实现：
+
+不转换，直接由OpenGL绘制，采用Shader实现">
 
 
 
@@ -110,7 +124,7 @@
   };
 </script>
 
-  <title> zhangqiyang的小站 </title>
+  <title> android_camera实时滤镜(1) | zhangqiyang的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -141,9 +155,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -240,9 +252,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -262,130 +274,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/05/01/android_基础知识汇总/" itemprop="url">
-                  android_基础知识汇总
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-01T16:04:00+08:00" content="2016-05-01">
-              2016-05-01
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/01/android_基础知识汇总/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/01/android_基础知识汇总/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="http://www.codemx.cn/2016/05/04/2016-05-04-Android-Tree/#more" target="_blank" rel="external">Android 知识梳理</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/01/android_camera实时滤镜(1)/" itemprop="url">
-                  android_camera实时滤镜(1)
-                </a>
+                android_camera实时滤镜(1)
               
             
           </h1>
@@ -452,6 +341,11 @@
           
 
           
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
         </div>
       </header>
     
@@ -463,9 +357,7 @@
       
 
       
-        
-          
-            <p>本文参考<a href="http://blog.csdn.net/column/details/androidrealfilter.html" target="_blank" rel="external">Android图像处理之实时滤镜</a></p>
+        <p>本文参考<a href="http://blog.csdn.net/column/details/androidrealfilter.html" target="_blank" rel="external">Android图像处理之实时滤镜</a></p>
 <p>相关知识：<br><a href="https://github.com/CyberAgent/android-gpuimage" target="_blank" rel="external">android-gpuimage</a>/<br><a href="http://blog.csdn.net/myarrow/article/details/7692044" target="_blank" rel="external">OpenGL</a></p>
 <p>　　目前Android平台优质的预览数据实时处理开源代码不多，例如android-gpuimage，采用将YUV数据在NDK层转化为RGB数据，由OpenGL渲染到屏幕中，滤镜算法由Shader实现。其他方面，经过研究，目前主要有以下思路实现：</p>
 <ol>
@@ -653,422 +545,103 @@ mGLAttribTextureCoordinate = GLES20.glGetAttribLocation(mGLProgId,&quot;inputTex
 </li>
 </ol>
 
-          
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2013/07/27/java_遍历map/" itemprop="url">
-                  java遍历Map集合
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2013-07-27T18:08:20+08:00" content="2013-07-27">
-              2013-07-27
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/android/" rel="tag">#android</a>
           
-
+            <a href="/tags/camera/" rel="tag">#camera</a>
           
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2013/07/27/java_遍历map/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2013/07/27/java_遍历map/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/实时滤镜/" rel="tag">#实时滤镜</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>　　在java中经常会遇到遍历Map集合的使用场景。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2013/07/27/java_遍历map/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/07/27/java_遍历map/" rel="next" title="java遍历Map集合">
+                <i class="fa fa-chevron-left"></i> java遍历Map集合
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/05/01/android_基础知识汇总/" rel="prev" title="android_基础知识汇总">
+                android_基础知识汇总 <i class="fa fa-chevron-right"></i>
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2013/07/27/java_String_format使用/" itemprop="url">
-                  java中String.format使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2013-07-27T18:08:20+08:00" content="2013-07-27">
-              2013-07-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2013/07/27/java_String_format使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2013/07/27/java_String_format使用/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>　　在JDK1.5中，String类增加了一个非常有用的静态函数format(String  format, Objece…  argues)，可以将各类数据格式化为字符串并输出。其中format参数指定了输出的格式，是最复杂也是最难掌握的一点，而argues则是一系列等待被格式化的对象。该函数对c语言中printf函数的用法进行了一定的模仿，因此有c语言基础的人学起来会轻松许多。下面我们着重讨论一下format 参数的格式及含义。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2013/07/27/java_String_format使用/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2016/05/01/android_camera实时滤镜(1)/"
+     data-title="android_camera实时滤镜(1)"
+     data-content=""
+     data-url="http://zhangqiyang.ren/2016/05/01/android_camera实时滤镜(1)/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
-  
-  
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2013/07/27/android_MediaPlayer状态机/" itemprop="url">
-                  MediaPlayer状态机
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2013-07-27T18:08:20+08:00" content="2013-07-27">
-              2013-07-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/android/MediaPlayer/" itemprop="url" rel="index">
-                    <span itemprop="name">MediaPlayer</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2013/07/27/android_MediaPlayer状态机/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2013/07/27/android_MediaPlayer状态机/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>　　MediaPlayer类可用于控制音频/视频文件或流的播放。</p>
-<p>　　对播放音频/视频文件和流的控制是通过一个状态机来管理的。下图显示一个MediaPlayer对象被支持的播放控制操作驱动的生命周期和状态。椭圆代表MediaPlayer对象可能驻留的状态。弧线表示驱动MediaPlayer在各个状态之间迁移的播放控制操作。这里有两种类型的弧线。由一个箭头开始的弧代表同步的方法调用，而以双箭头开头的代表的弧线代表异步方法调用。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2013/07/27/android_MediaPlayer状态机/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/01/android_camera实时滤镜(1)/"
+           data-title="android_camera实时滤镜(1)" data-url="http://zhangqiyang.ren/2016/05/01/android_camera实时滤镜(1)/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -1088,8 +661,17 @@ mGLAttribTextureCoordinate = GLES20.glGetAttribLocation(mGLProgId,&quot;inputTex
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars2.githubusercontent.com/u/10182123?v=3&s=140"
@@ -1173,6 +755,17 @@ mGLAttribTextureCoordinate = GLES20.glGetAttribLocation(mGLProgId,&quot;inputTex
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -1285,6 +878,10 @@ mGLAttribTextureCoordinate = GLES20.glGetAttribLocation(mGLProgId,&quot;inputTex
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
