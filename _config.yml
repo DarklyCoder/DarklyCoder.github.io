@@ -10,7 +10,7 @@ author: zhangqiyang
 language: zh-Hans
 timezone:
 keywords: [android, github, 技术博客, 移动开发, google]
-favicon: /favicon.ico
+favicon: favicon.ico
 avatar: https://avatars2.githubusercontent.com/u/10182123?v=3&s=140
 
 # URL
@@ -72,7 +72,11 @@ theme: next
 plugins:
 - hexo-generator-cname
 
+# 多说分享服务
+duoshuo_share: true
 duoshuo_shortname: zhangqy
+# 多说热评文章 true 或者 false
+duoshuo_hotartical: true
 baidu_analytics: 5d9f062022728d2ef3b4d5e23e106d38
 
 
