@@ -16,7 +16,7 @@ tags:
 [OpenGL](http://blog.csdn.net/myarrow/article/details/7692044)
 
 　　目前Android平台优质的预览数据实时处理开源代码不多，例如android-gpuimage，采用将YUV数据在NDK层转化为RGB数据，由OpenGL渲染到屏幕中，滤镜算法由Shader实现。其他方面，经过研究，目前主要有以下思路实现：
-
+<!-- more -->
 1. 不转换，直接由OpenGL绘制，采用Shader实现图像处理（因处理算法和渲染图片大部分采用RGB格式，此方案暂不考虑，仅提出可能性）；
 2. 通过C/C++实现YUV->RGB和图像处理，合成Bitmap，由CPU绘制在Canvas上；
 3. 通过C/C++实现YUV->RGB和图像处理，在NDK层直接绘制在SurfaceView上；
