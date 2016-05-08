@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://zhangqiyang.ren/2013/07/27/java_String_format使用/index.html">
 <meta property="og:site_name" content="zhangqiyang的小站">
 <meta property="og:description" content="在JDK1.5中，String类增加了一个非常有用的静态函数format(String  format, Objece…  argues)，可以将各类数据格式化为字符串并输出。其中format参数指定了输出的格式，是最复杂也是最难掌握的一点，而argues则是一系列等待被格式化的对象。该函数对c语言中printf函数的用法进行了一定的模仿，因此有c语言基础的人学起来会轻松许多。下面我们着重讨论一下">
-<meta property="og:updated_time" content="2016-05-07T10:16:49.000Z">
+<meta property="og:updated_time" content="2016-05-08T10:03:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java中String.format使用">
 <meta name="twitter:description" content="在JDK1.5中，String类增加了一个非常有用的静态函数format(String  format, Objece…  argues)，可以将各类数据格式化为字符串并输出。其中format参数指定了输出的格式，是最复杂也是最难掌握的一点，而argues则是一系列等待被格式化的对象。该函数对c语言中printf函数的用法进行了一定的模仿，因此有c语言基础的人学起来会轻松许多。下面我们着重讨论一下">
@@ -327,7 +327,7 @@
       
 
       
-        <p>　　在JDK1.5中，String类增加了一个非常有用的静态函数format(String  format, Objece…  argues)，可以将各类数据格式化为字符串并输出。其中format参数指定了输出的格式，是最复杂也是最难掌握的一点，而argues则是一系列等待被格式化的对象。该函数对c语言中printf函数的用法进行了一定的模仿，因此有c语言基础的人学起来会轻松许多。下面我们着重讨论一下format 参数的格式及含义。<br>　　format参数中可以包含不需要转化的字符串，这些字符串是你写什么，最终就输出什么。同时还包含一些特殊格式的内容，来指定将哪个对象来转换，以及转换成什么形式。这种特殊的格式通通以%index$开头，index从1开始取值，表示将第index个参数拿进来进行格式化。这一点比c语言要强一点， c语言只能按照参数的顺序依次格式化，而Java可以选择第n个参数来格式化。由于该函数可以对任意一个对象进行格式化，不同的对象适用的参数也不同，因此我们下面分类来讨论。</p>
+        <p>　　在JDK1.5中，String类增加了一个非常有用的静态函数format(String  format, Objece…  argues)，可以将各类数据格式化为字符串并输出。其中format参数指定了输出的格式，是最复杂也是最难掌握的一点，而argues则是一系列等待被格式化的对象。该函数对c语言中printf函数的用法进行了一定的模仿，因此有c语言基础的人学起来会轻松许多。下面我们着重讨论一下format 参数的格式及含义。<br><a id="more"></a><br>　　format参数中可以包含不需要转化的字符串，这些字符串是你写什么，最终就输出什么。同时还包含一些特殊格式的内容，来指定将哪个对象来转换，以及转换成什么形式。这种特殊的格式通通以%index$开头，index从1开始取值，表示将第index个参数拿进来进行格式化。这一点比c语言要强一点， c语言只能按照参数的顺序依次格式化，而Java可以选择第n个参数来格式化。由于该函数可以对任意一个对象进行格式化，不同的对象适用的参数也不同，因此我们下面分类来讨论。</p>
 <h4 id="u5BF9_u6574_u6570_u8FDB_u884C_u683C_u5F0F_u5316_uFF1A_25_5Bindex_24_5D_5B_u6807_u8BC6_5D_5B_u6700_u5C0F_u5BBD_u5EA6_5D_u8F6C_u6362_u65B9_u5F0F"><a href="#u5BF9_u6574_u6570_u8FDB_u884C_u683C_u5F0F_u5316_uFF1A_25_5Bindex_24_5D_5B_u6807_u8BC6_5D_5B_u6700_u5C0F_u5BBD_u5EA6_5D_u8F6C_u6362_u65B9_u5F0F" class="headerlink" title="对整数进行格式化：%[index$][标识][最小宽度]转换方式"></a>对整数进行格式化：%[index$][标识][最小宽度]转换方式</h4><p>　　我们可以看到，格式化字符串由4部分组成，其中%[index$]的含义我们上面已经讲过，[最小宽度]的含义也很好理解，就是最终该整数转化的字符串最少包含多少位数字。我们来看看剩下2个部分的含义吧：</p>
 <h5 id="u6807_u8BC6_uFF1A"><a href="#u6807_u8BC6_uFF1A" class="headerlink" title="标识："></a>标识：</h5><pre><code>&apos;-&apos;    在最小宽度内左对齐，不可以与“用0填充”同时使用
 &apos;#&apos;    只适用于8进制和16进制，8进制时在结果前面增加一个0，16进制时在结果前面增加0x

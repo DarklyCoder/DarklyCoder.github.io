@@ -84,25 +84,16 @@
 
 
 
-<meta name="description" content="最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！public static void work(Map&amp;lt;String, String&amp;gt; map) {
-    Collection&amp;lt;String&amp;gt; c = map.values();
-    Iterator it = c.iterator();
-    while (it.ha">
+<meta name="description" content="在java中经常会遇到遍历Map集合的使用场景。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java遍历Map集合">
 <meta property="og:url" content="http://zhangqiyang.ren/2013/07/27/java_遍历map/index.html">
 <meta property="og:site_name" content="zhangqiyang的小站">
-<meta property="og:description" content="最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！public static void work(Map&amp;lt;String, String&amp;gt; map) {
-    Collection&amp;lt;String&amp;gt; c = map.values();
-    Iterator it = c.iterator();
-    while (it.ha">
-<meta property="og:updated_time" content="2016-05-07T10:16:04.000Z">
+<meta property="og:description" content="在java中经常会遇到遍历Map集合的使用场景。">
+<meta property="og:updated_time" content="2016-05-08T10:02:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java遍历Map集合">
-<meta name="twitter:description" content="最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！public static void work(Map&amp;lt;String, String&amp;gt; map) {
-    Collection&amp;lt;String&amp;gt; c = map.values();
-    Iterator it = c.iterator();
-    while (it.ha">
+<meta name="twitter:description" content="在java中经常会遇到遍历Map集合的使用场景。">
 
 
 
@@ -336,7 +327,8 @@
       
 
       
-        <h4 id="u6700_u5E38_u89C4_u7684_u4E00_u79CD_u904D_u5386_u65B9_u6CD5_uFF0C_u6700_u5E38_u89C4_u5C31_u662F_u6700_u5E38_u7528_u7684_uFF0C_u867D_u7136_u4E0D_u590D_u6742_uFF0C_u4F46_u5F88_u91CD_u8981_uFF0C_u8FD9_u662F_u6211_u4EEC_u6700_u719F_u6089_u7684_uFF0C_u5C31_u4E0D_u591A_u8BF4_u4E86_uFF01_uFF01"><a href="#u6700_u5E38_u89C4_u7684_u4E00_u79CD_u904D_u5386_u65B9_u6CD5_uFF0C_u6700_u5E38_u89C4_u5C31_u662F_u6700_u5E38_u7528_u7684_uFF0C_u867D_u7136_u4E0D_u590D_u6742_uFF0C_u4F46_u5F88_u91CD_u8981_uFF0C_u8FD9_u662F_u6211_u4EEC_u6700_u719F_u6089_u7684_uFF0C_u5C31_u4E0D_u591A_u8BF4_u4E86_uFF01_uFF01" class="headerlink" title="最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！"></a>最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！</h4><pre><code>public static void work(Map&lt;String, String&gt; map) {
+        <p>　　在java中经常会遇到遍历Map集合的使用场景。<br><a id="more"></a></p>
+<h4 id="u6700_u5E38_u89C4_u7684_u4E00_u79CD_u904D_u5386_u65B9_u6CD5_uFF0C_u6700_u5E38_u89C4_u5C31_u662F_u6700_u5E38_u7528_u7684_uFF0C_u867D_u7136_u4E0D_u590D_u6742_uFF0C_u4F46_u5F88_u91CD_u8981_uFF0C_u8FD9_u662F_u6211_u4EEC_u6700_u719F_u6089_u7684_uFF0C_u5C31_u4E0D_u591A_u8BF4_u4E86_uFF01_uFF01"><a href="#u6700_u5E38_u89C4_u7684_u4E00_u79CD_u904D_u5386_u65B9_u6CD5_uFF0C_u6700_u5E38_u89C4_u5C31_u662F_u6700_u5E38_u7528_u7684_uFF0C_u867D_u7136_u4E0D_u590D_u6742_uFF0C_u4F46_u5F88_u91CD_u8981_uFF0C_u8FD9_u662F_u6211_u4EEC_u6700_u719F_u6089_u7684_uFF0C_u5C31_u4E0D_u591A_u8BF4_u4E86_uFF01_uFF01" class="headerlink" title="最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！"></a>最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！</h4><pre><code>public static void work(Map&lt;String, String&gt; map) {
     Collection&lt;String&gt; c = map.values();
     Iterator it = c.iterator();
     while (it.hasNext()) {
