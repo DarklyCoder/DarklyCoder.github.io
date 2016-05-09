@@ -98,7 +98,7 @@
 <meta property="og:image" content="http://www.sxt.cn/editor/attached/image/20151101/714238790/83240985-6d24-462c-9c86-4415f638c5ff.jpg">
 <meta property="og:image" content="http://www.sxt.cn/editor/attached/image/20151101/714238790/bebd51c8-3665-4159-91c7-86dd7da918e4.jpg">
 <meta property="og:image" content="http://www.sxt.cn/editor/attached/image/20151101/714238790/0adcd150-b368-45f3-bc61-cdf9db62625d.jpg">
-<meta property="og:updated_time" content="2016-05-09T16:40:52.000Z">
+<meta property="og:updated_time" content="2016-05-09T16:42:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android-搭建OpenCV开发环境">
 <meta name="twitter:description" content="搭建OpenCV开发环境
@@ -345,8 +345,9 @@
         <h3 id="u642D_u5EFAOpenCV_u5F00_u53D1_u73AF_u5883"><a href="#u642D_u5EFAOpenCV_u5F00_u53D1_u73AF_u5883" class="headerlink" title="搭建OpenCV开发环境"></a>搭建OpenCV开发环境</h3><ul>
 <li>下载<a href="http://opencv.org/" target="_blank" rel="external">OpenCV for Android</a>。</li>
 <li>解压文件。samples目录下是样例代码，sdk目录下是我们需要用到的java层和jni层的代码，apk目录是manager的apk安装包。<a id="more"></a>
-　　其实OpenCV最简单的使用方式是使用manager，也就是使用apk目录下的安装包，安装对应的apk，将java层代码导入，使用<code>OpenCVLoader.initAsync()</code>加载库，之后你就可以直接用java代码调用Opencv相关的功能了。但是这种方式除了安装我们自己的apk还需要安装上面提到的manager的apk，用户体验十分不好，不推荐使用。下面介绍另外三种使用方式将完全脱离这个manager的apk。</li>
+</li>
 </ul>
+<p>　　其实OpenCV最简单的使用方式是使用manager，也就是使用apk目录下的安装包，安装对应的apk，将java层代码导入，使用<code>OpenCVLoader.initAsync()</code>加载库，之后你就可以直接用java代码调用Opencv相关的功能了。但是这种方式除了安装我们自己的apk还需要安装上面提到的manager的apk，用户体验十分不好，不推荐使用。下面介绍另外三种使用方式将完全脱离这个manager的apk。</p>
 <h4 id="u524D_u671F_u51C6_u5907"><a href="#u524D_u671F_u51C6_u5907" class="headerlink" title="前期准备"></a>前期准备</h4><ol>
 <li><p>首先新建一个项目，将OpenCV中sdk目录下的native目录拷到项目根目录。</p>
 <div align="center"><br> <img src="http://www.sxt.cn/editor/attached/image/20151101/714238790/24e8a753-59ad-4940-9331-22e7184c3b0a.jpg"><br></div>
