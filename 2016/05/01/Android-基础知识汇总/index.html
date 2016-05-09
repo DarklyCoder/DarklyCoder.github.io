@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java,遍历Map," />
+  <meta name="keywords" content="Android,基础知识," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="在java中经常会遇到遍历Map集合的使用场景。">
+<meta name="description" content="Android 知识梳理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java遍历Map集合">
-<meta property="og:url" content="http://zhangqiyang.ren/2013/07/27/java_遍历map/index.html">
+<meta property="og:title" content="Android_基础知识汇总">
+<meta property="og:url" content="http://zhangqiyang.ren/2016/05/01/Android-基础知识汇总/index.html">
 <meta property="og:site_name" content="zhangqiyang的小站">
-<meta property="og:description" content="在java中经常会遇到遍历Map集合的使用场景。">
-<meta property="og:updated_time" content="2016-05-08T10:02:53.000Z">
+<meta property="og:description" content="Android 知识梳理">
+<meta property="og:updated_time" content="2016-05-09T14:26:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java遍历Map集合">
-<meta name="twitter:description" content="在java中经常会遇到遍历Map集合的使用场景。">
+<meta name="twitter:title" content="Android_基础知识汇总">
+<meta name="twitter:description" content="Android 知识梳理">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> java遍历Map集合 | zhangqiyang的小站 </title>
+  <title> Android_基础知识汇总 | zhangqiyang的小站 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +261,7 @@
             
             
               
-                java遍历Map集合
+                Android_基础知识汇总
               
             
           </h1>
@@ -273,8 +273,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2013-07-27T18:08:20+08:00" content="2013-07-27">
-              2013-07-27
+            <time itemprop="dateCreated" datetime="2016-05-01T16:04:00+08:00" content="2016-05-01">
+              2016-05-01
             </time>
           </span>
 
@@ -287,8 +287,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -303,8 +303,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2013/07/27/java_遍历map/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2013/07/27/java_遍历map/" itemprop="commentsCount"></span>
+                <a href="/2016/05/01/Android-基础知识汇总/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/01/Android-基础知识汇总/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -332,29 +332,8 @@
       
 
       
-        <p>　　在java中经常会遇到遍历Map集合的使用场景。<br><a id="more"></a></p>
-<h4 id="u6700_u5E38_u89C4_u7684_u4E00_u79CD_u904D_u5386_u65B9_u6CD5_uFF0C_u6700_u5E38_u89C4_u5C31_u662F_u6700_u5E38_u7528_u7684_uFF0C_u867D_u7136_u4E0D_u590D_u6742_uFF0C_u4F46_u5F88_u91CD_u8981_uFF0C_u8FD9_u662F_u6211_u4EEC_u6700_u719F_u6089_u7684_uFF0C_u5C31_u4E0D_u591A_u8BF4_u4E86_uFF01_uFF01"><a href="#u6700_u5E38_u89C4_u7684_u4E00_u79CD_u904D_u5386_u65B9_u6CD5_uFF0C_u6700_u5E38_u89C4_u5C31_u662F_u6700_u5E38_u7528_u7684_uFF0C_u867D_u7136_u4E0D_u590D_u6742_uFF0C_u4F46_u5F88_u91CD_u8981_uFF0C_u8FD9_u662F_u6211_u4EEC_u6700_u719F_u6089_u7684_uFF0C_u5C31_u4E0D_u591A_u8BF4_u4E86_uFF01_uFF01" class="headerlink" title="最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！"></a>最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！</h4><pre><code>public static void work(Map&lt;String, String&gt; map) {
-    Collection&lt;String&gt; c = map.values();
-    Iterator it = c.iterator();
-    while (it.hasNext()) {
-        System.out.println(it.next());
-    }
-}
-</code></pre><h4 id="u5229_u7528keyset_u8FDB_u884C_u904D_u5386_2C_u5B83_u7684_u4F18_u70B9_u5728_u4E8E_u53EF_u4EE5_u6839_u636E_u4F60_u6240_u60F3_u8981_u7684key_u503C_u5F97_u5230_u4F60_u60F3_u8981_u7684_values_uFF0C_u66F4_u5177_u7075_u6D3B_u6027_uFF01_uFF01"><a href="#u5229_u7528keyset_u8FDB_u884C_u904D_u5386_2C_u5B83_u7684_u4F18_u70B9_u5728_u4E8E_u53EF_u4EE5_u6839_u636E_u4F60_u6240_u60F3_u8981_u7684key_u503C_u5F97_u5230_u4F60_u60F3_u8981_u7684_values_uFF0C_u66F4_u5177_u7075_u6D3B_u6027_uFF01_uFF01" class="headerlink" title="利用keyset进行遍历,它的优点在于可以根据你所想要的key值得到你想要的 values，更具灵活性！！"></a>利用keyset进行遍历,它的优点在于可以根据你所想要的key值得到你想要的 values，更具灵活性！！</h4><pre><code>public static void workByKeySet(Map&lt;String, String&gt; map) {
-    Set&lt;String&gt; key = map.keySet();
-    for (Iterator it = key.iterator(); it.hasNext();) {
-        String s = (String) it.next();
-        System.out.println(map.get(s));
-    }
-}
-</code></pre><h4 id="u6BD4_u8F83_u590D_u6742_u7684_u4E00_u79CD_u904D_u5386_u5728_u8FD9_u91CC_uFF0C_u5B83_u7684_u7075_u6D3B_u6027_u592A_u5F3A_u4E86_uFF0C_u60F3_u5F97_u5230_u4EC0_u4E48_u5C31_u80FD_u5F97_u5230_u4EC0_u4E48_uFF01_uFF01"><a href="#u6BD4_u8F83_u590D_u6742_u7684_u4E00_u79CD_u904D_u5386_u5728_u8FD9_u91CC_uFF0C_u5B83_u7684_u7075_u6D3B_u6027_u592A_u5F3A_u4E86_uFF0C_u60F3_u5F97_u5230_u4EC0_u4E48_u5C31_u80FD_u5F97_u5230_u4EC0_u4E48_uFF01_uFF01" class="headerlink" title="比较复杂的一种遍历在这里，它的灵活性太强了，想得到什么就能得到什么！！"></a>比较复杂的一种遍历在这里，它的灵活性太强了，想得到什么就能得到什么！！</h4><pre><code>public static void workByEntry(Map&lt;String, String&gt; map) {
-    Set&lt;Map.Entry&lt;String, String&gt;&gt; set = map.entrySet();
-    for (Iterator&lt;Map.Entry&lt;String, String&gt;&gt; it = set.iterator(); it.hasNext();) {
-        Map.Entry&lt;String, String&gt; entry = (Map.Entry&lt;String, String&gt;) it.next();
-        System.out.println(entry.getKey() + &quot;---&gt;&quot; + entry.getValue());
-    }
-}
-</code></pre>
+        <p><a href="http://www.codemx.cn/2016/05/04/2016-05-04-Android-Tree/#more" target="_blank" rel="external">Android 知识梳理</a></p>
+
       
     </div>
 
@@ -375,9 +354,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag">#java</a>
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
-            <a href="/tags/遍历Map/" rel="tag">#遍历Map</a>
+            <a href="/tags/基础知识/" rel="tag">#基础知识</a>
           
         </div>
       
@@ -386,16 +365,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2013/07/27/java_String_format使用/" rel="next" title="java中String.format使用">
-                <i class="fa fa-chevron-left"></i> java中String.format使用
+              <a href="/2016/05/01/Android-Camera实时滤镜(1)/" rel="next" title="Android_Camera实时滤镜(1)">
+                <i class="fa fa-chevron-left"></i> Android_Camera实时滤镜(1)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/01/android_camera实时滤镜(1)/" rel="prev" title="android_camera实时滤镜(1)">
-                android_camera实时滤镜(1) <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/08/sublime插件安装/" rel="prev" title="sublime插件安装">
+                sublime插件安装 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -411,10 +390,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2013/07/27/java_遍历map/"
-     data-title="java遍历Map集合"
+        <div class="ds-share flat" data-thread-key="2016/05/01/Android-基础知识汇总/"
+     data-title="Android_基础知识汇总"
      data-content=""
-     data-url="http://zhangqiyang.ren/2013/07/27/java_遍历map/">
+     data-url="http://zhangqiyang.ren/2016/05/01/Android-基础知识汇总/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -444,8 +423,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2013/07/27/java_遍历map/"
-           data-title="java遍历Map集合" data-url="http://zhangqiyang.ren/2013/07/27/java_遍历map/">
+      <div class="ds-thread" data-thread-key="2016/05/01/Android-基础知识汇总/"
+           data-title="Android_基础知识汇总" data-url="http://zhangqiyang.ren/2016/05/01/Android-基础知识汇总/">
       </div>
     
   </div>
@@ -490,7 +469,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -498,7 +477,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -507,7 +486,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -570,7 +549,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6700_u5E38_u89C4_u7684_u4E00_u79CD_u904D_u5386_u65B9_u6CD5_uFF0C_u6700_u5E38_u89C4_u5C31_u662F_u6700_u5E38_u7528_u7684_uFF0C_u867D_u7136_u4E0D_u590D_u6742_uFF0C_u4F46_u5F88_u91CD_u8981_uFF0C_u8FD9_u662F_u6211_u4EEC_u6700_u719F_u6089_u7684_uFF0C_u5C31_u4E0D_u591A_u8BF4_u4E86_uFF01_uFF01"><span class="nav-number">1.</span> <span class="nav-text">最常规的一种遍历方法，最常规就是最常用的，虽然不复杂，但很重要，这是我们最熟悉的，就不多说了！！</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5229_u7528keyset_u8FDB_u884C_u904D_u5386_2C_u5B83_u7684_u4F18_u70B9_u5728_u4E8E_u53EF_u4EE5_u6839_u636E_u4F60_u6240_u60F3_u8981_u7684key_u503C_u5F97_u5230_u4F60_u60F3_u8981_u7684_values_uFF0C_u66F4_u5177_u7075_u6D3B_u6027_uFF01_uFF01"><span class="nav-number">2.</span> <span class="nav-text">利用keyset进行遍历,它的优点在于可以根据你所想要的key值得到你想要的 values，更具灵活性！！</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6BD4_u8F83_u590D_u6742_u7684_u4E00_u79CD_u904D_u5386_u5728_u8FD9_u91CC_uFF0C_u5B83_u7684_u7075_u6D3B_u6027_u592A_u5F3A_u4E86_uFF0C_u60F3_u5F97_u5230_u4EC0_u4E48_u5C31_u80FD_u5F97_u5230_u4EC0_u4E48_uFF01_uFF01"><span class="nav-number">3.</span> <span class="nav-text">比较复杂的一种遍历在这里，它的灵活性太强了，想得到什么就能得到什么！！</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>

@@ -1,0 +1,836 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,RenderScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="RenderScript的首页
+关于图形方面的知识
+关于计算方面的知识
+什么是RenderScript？　　RenderScript是Android平台上进行高性能密集型任务计算的框架。Renderscript主要面向并行计算，虽然它对计算密集型工作也是有益的。Renderscript在运行时将在设备上可用的处理器间平衡负载，比如多核CPU，GPU或者DSP，它让你专注于算法而不是平衡负载。Ren">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android_RenderScript介绍">
+<meta property="og:url" content="http://zhangqiyang.ren/2016/05/09/Android-RenderScript介绍/index.html">
+<meta property="og:site_name" content="zhangqiyang的小站">
+<meta property="og:description" content="RenderScript的首页
+关于图形方面的知识
+关于计算方面的知识
+什么是RenderScript？　　RenderScript是Android平台上进行高性能密集型任务计算的框架。Renderscript主要面向并行计算，虽然它对计算密集型工作也是有益的。Renderscript在运行时将在设备上可用的处理器间平衡负载，比如多核CPU，GPU或者DSP，它让你专注于算法而不是平衡负载。Ren">
+<meta property="og:updated_time" content="2016-05-09T14:26:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android_RenderScript介绍">
+<meta name="twitter:description" content="RenderScript的首页
+关于图形方面的知识
+关于计算方面的知识
+什么是RenderScript？　　RenderScript是Android平台上进行高性能密集型任务计算的框架。Renderscript主要面向并行计算，虽然它对计算密集型工作也是有益的。Renderscript在运行时将在设备上可用的处理器间平衡负载，比如多核CPU，GPU或者DSP，它让你专注于算法而不是平衡负载。Ren">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6281570686548854000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Android_RenderScript介绍 | zhangqiyang的小站 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5d9f062022728d2ef3b4d5e23e106d38";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">zhangqiyang的小站</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">追梦者</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android_RenderScript介绍
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-09T11:23:30+08:00" content="2016-05-09">
+              2016-05-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/09/Android-RenderScript介绍/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/09/Android-RenderScript介绍/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="http://developer.android.com/guide/topics/renderscript/index.html" target="_blank" rel="external">RenderScript的首页</a></p>
+<p><a href="http://developer.android.com/guide/topics/renderscript/graphics.html" target="_blank" rel="external">关于图形方面的知识</a></p>
+<p><a href="http://developer.android.com/guide/topics/renderscript/compute.html" target="_blank" rel="external">关于计算方面的知识</a></p>
+<h3 id="u4EC0_u4E48_u662FRenderScript_uFF1F"><a href="#u4EC0_u4E48_u662FRenderScript_uFF1F" class="headerlink" title="什么是RenderScript？"></a>什么是RenderScript？</h3><p>　　RenderScript是Android平台上进行高性能密集型任务计算的框架。Renderscript主要面向并行计算，虽然它对计算密集型工作也是有益的。Renderscript在运行时将在设备上可用的处理器间平衡负载，比如多核CPU，GPU或者DSP，它让你专注于算法而不是平衡负载。RenderScript对图像处理，计算摄影学，计算机视觉方面的应用非常有用。<br><a id="more"></a><br>　　在开始学习Renderscript前，你应该理解两个主要概念：</p>
+<ul>
+<li>高性能的计算核心由支持C99协议的语言书写（也就是C语言。译者注）。</li>
+<li>一套Java API 用来管理RenderScript资源，并控制核心计算的执行。</li>
+</ul>
+<h4 id="u5199RenderScript_u5185_u6838"><a href="#u5199RenderScript_u5185_u6838" class="headerlink" title="写RenderScript内核"></a>写RenderScript内核</h4><hr>
+<p>　　一个RenderScript内核一般写在[工程目录]/src/ 目录下的<code>.rs</code>文件中，每一个<code>. rs</code>文件成为一个脚本。每一个脚本包含一系列的内核、函数、变量。通常包含:</p>
+<ul>
+<li>一个编译声明RenderScript内核语言的版本(#pragma version(1))。目前可用值只有1。</li>
+<li>一个编译声明这个脚本对应的java类的包名(#pragma rs java_package_name(com.example.app))。注意你的<code>.rs</code>文件必须放在你的Application里面，不能放在library project里。</li>
+<li>一些可调用的函数。一个可调用的函数是一个单线程的RenderScript函数，你可以从Java代码中调用它并传递变量。它通常用在处理管道里初始化设置或者一系列较大的计算。</li>
+<li>一些全局变量。一个Renderscript全局变量等价于C语言中的一个全局变量。你可以从Java代码中访问，它们通常被用来向RenderScript内核传递参数。</li>
+<li><p>一些计算核心。一个计算核心是在Allocation里的Element间执行的平行函数。<br>  一个简单的核心如下：</p>
+<pre><code>uchar4 __attribute__((kernel)) invert(uchar4 in, uint32_t x, uint32_t y) {
+  uchar4 out = in;
+  out.r = 255 - in.r;
+  out.g = 255 - in.g;
+  out.b = 255 - in.b;
+  return out;
+}
+</code></pre></li>
+</ul>
+<p>　　它在很多方面跟标准C函数一致。第一个值得注意的是<code>__attribute__((kernel))</code>, 这表明这个函数式RenderScript内核而不是可调用函数。第二个特性是<code>in</code>参数和它的类型，在RenderScript内核里第一个参数会根据传入内核平台的Allocation被自动填入。默认的，内核将在每一个Element执行一次时在整个Allocation中运行。第三个注意点是内核的返回类型，这个返回值将被自动的写入到输出Allocation的适当的位置。RenderScript会在运行时确保输入和输出的Allocation的Element类型互相匹配；如果不匹配，会抛出异常。</p>
+<p>　　一个核心可能有一个输入Allocation或一个输出Allocation。也可能有多个输入输出Allocation。如果需要多个输入输出Allocation，这些对象应该同<code>rs_allocations</code>脚本全局变量绑定，并且通过<code>rsGetElementAt_type()</code>或者<code>rsSetElementAt_type()</code> 在内核或可调用函数中访问。</p>
+<p>　　一个核心可以使用<code>x</code>、<code>y</code>和<code>z</code>参数来访问当前执行的坐标。这些参数是可选的，但是类型必须是<code>uint32_t</code>。</p>
+<ul>
+<li>可选的<code>init()</code>函数。<code>init()</code>函数是一个特殊的可调用函数，它在脚本初始化时执行。这样可以在脚本创建时自动进行一些计算。</li>
+<li>一些静态全局变量和函数。静态的全局变量与普通的全局变量不同的地方是它不能在Java代码中设定。静态函数是一个标准的C函数，可以在内核和脚本中的可调用方法中调用，但是不能被Java API访问。如果全局变量或者函数不需要在Java代码中使用，强烈建议声明成<code>static</code>。</li>
+</ul>
+<h4 id="u8BBE_u7F6E_u6D6E_u70B9_u7CBE_u5EA6"><a href="#u8BBE_u7F6E_u6D6E_u70B9_u7CBE_u5EA6" class="headerlink" title="设置浮点精度"></a>设置浮点精度</h4><p>　　你可以在脚本里控制浮点数的精度。这样做在不要求使用IEEE 754-2008 标准（默认使用）时是很有用的。下面的编译指示可以设置不同的浮点精度：</p>
+<ul>
+<li><code>#pragma rs_fp_full</code> (不指定时默认的设置)：使用IEEE 754-2008 标准的精度。</li>
+<li><code>#pragma rs_fp_relaxed</code> 不严格的使用IEEE 754-2008 的标准，允许少量的精度误差。</li>
+<li><code>#pragma rs_fp_imprecise</code> 不需要严格的精度要求，允许<code>#pragma rs_fp_relaxed</code>下的所有情况，还包括：<ul>
+<li>Operations resulting in -0.0 can return +0.0 instead.</li>
+<li>Operations on INF and NAN are undefined.</li>
+</ul>
+</li>
+</ul>
+<p>Most applications can use <code>rs_fp_relaxed</code> without any side effects. This may be very beneficial on some architectures due to additional optimizations only available with relaxed precision (such as SIMD CPU instructions).</p>
+<h4 id="u8BBF_u95EERenderscript_API"><a href="#u8BBF_u95EERenderscript_API" class="headerlink" title="访问Renderscript API"></a>访问Renderscript API</h4><hr>
+<p>　　在Android应用里使用RenderScript的API有两种方式</p>
+<ul>
+<li><code>android.renderscript</code> 这个包在运行Android3.0(API level 11)的设备上可用，这是原始的API，目前没有被更新。</li>
+<li><code>android.support.v8.renderscript</code> 这个包可以通过共享库在运行Android2.2(API level 8)或以上版本的设备上使用。<br>强烈建议使用第二种方式，因为它包含了最新的更新，并且支持更多的设备。</li>
+</ul>
+<h4 id="u4F7F_u7528RenderScript_u5171_u4EAB_u5E93API"><a href="#u4F7F_u7528RenderScript_u5171_u4EAB_u5E93API" class="headerlink" title="使用RenderScript共享库API"></a>使用RenderScript共享库API</h4><p>　　为了使用共享库的RenderScript API，你需要安装你的开发环境。你需要下面的SDK工具：</p>
+<ul>
+<li>Android SDK Tools revision 22.2 or higher</li>
+<li>Android SDK Build-tools revision 18.1.0 or higher</li>
+</ul>
+<p>使用RenderScript APIs：</p>
+<ol>
+<li>安装需要的SDK和编译工具</li>
+<li><p>在build.gradle中修改RenderScript的设置</p>
+<ul>
+<li>打开当前模块的build.gradle文件.</li>
+<li><p>对照下面代码添加RenderScript设置:</p>
+<pre><code>android {
+    compileSdkVersion 23
+    buildToolsVersion &quot;23.0.3&quot;
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 19
+
+        renderscriptTargetApi 18
+        renderscriptSupportModeEnabled true
+    }
+}
+</code></pre></li>
+</ul>
+</li>
+<li><p>在类中导入共享库的类</p>
+<pre><code>import android.support.v8.renderscript.*;
+</code></pre></li>
+</ol>
+<h4 id="u5728Java_u4EE3_u7801_u4E2D_u4F7F_u7528RenderScript"><a href="#u5728Java_u4EE3_u7801_u4E2D_u4F7F_u7528RenderScript" class="headerlink" title="在Java代码中使用RenderScript"></a>在Java代码中使用RenderScript</h4><hr>
+<p>　　在Java代码中使用RenderScript依赖<code>android.renderscript</code>或<code>android.support.v8.renderscript</code>中的API。大部分程序遵循如下的使用方式：</p>
+<ol>
+<li><p><strong>初始化RenderScript context。</strong><code>RenderScript</code> context通过<code>create(Context)</code>创建，它能保证RenderScript能被使用，并且提供了一个对象来控制所有后面创建的RenderScript对象的生命周期。创建这个context可能是一个耗时的操作，因为可能要在硬件的不同位置创建资源;通常，一个程序同时只能有一个RenderScript context。</p>
+</li>
+<li><p><strong>创建至少一个Allocation来传递给脚本。</strong>一个<code>Allocation</code>是一个RenderScript的对象，它存储了固定数量的数据。脚本里的内核将Allocation对象作为输入和输出，内核可以在绑定脚本全局变量时通过<code>rsGetElementAt_type()</code>和<code>rsSetElementType_type()</code>来访问Allocation对象。Allocation对象可以通过数组从java代码传递给Renderscript代码，反之亦然。Allocation对象通常用<code>createTyped(RenderScript, Type)</code>或<code>createFromBitmap(RenderScript, Bitmap)</code>创建。</p>
+</li>
+<li><p><strong>创建你所需的任何脚本。</strong>有两种脚本可被创建：</p>
+<ul>
+<li><p><strong>ScriptC</strong>：这是上面<code>写RenderScript内核</code>部分介绍的用户自定义脚本。RenderScript编译器会为每一个脚本创建一个java类，可以方便从java代码中访问脚本；这个类会被命名成ScriptC_filename。比如：如果上面的核心位于<code>inver.rs</code>中，并且一个RenderScript context已经被创建，在java代码中初始化脚本的代码如下：</p>
+<pre><code>ScriptC_invert invert = new ScriptC_invert(mRenderScript);
+</code></pre></li>
+<li><p><strong>ScriptIntrinsic</strong>：这是嵌入在RenderScript内核中的通用操作，比如高斯模糊、卷积、图像混合。更多信息请参看 <a href="http://developer.android.com/intl/zh-cn/reference/android/renderscript/ScriptIntrinsic.html" target="_blank" rel="external">ScriptInstrinsic</a>。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>填充Allocation中的数据。</strong>除了<code>android.renderscript</code>创建的Allocation以外，一个空的Allocation将被创建，填充一个Allocation，请使用Allocation的<code>copy</code>方法。</p>
+</li>
+<li><p><strong>设置必要的脚步全局变量。</strong>全局变量可以使用<code>ScriptC_filename</code>里的<code>set_globalname</code>来设置。例如,要想设置一个叫<code>elements</code>的整形变量，使用java方法<code>set_elements(int)</code>。RenderScript对象也可以在核心中设置，例如，叫做<code>lookup</code>的<code>rs_allocation</code>变量可以通过<code>set_lookup(Allocation)</code>函数设置。</p>
+</li>
+<li><p><strong>加载适当的核心。</strong>使用ScriptC_filename中的forEach_kernelname()函数可以加载一个核心。加载过程是异步的，加载的顺序和启动的顺序是一致的。根据传入内核的参数的不同，这个函数会携带一个或两个Allocation。默认的，一个核心会在整个输入输出Allocation中执行；为了在一系列Allocation中执行，给forEach函数的最后一个参数传递恰当的<code>Script.LaunchOptions</code>。可调用函数可以使用<code>ScriptC_filename</code>中的<code>invoke_functionname</code>调用。</p>
+</li>
+<li><p><strong>从Allocation对象中拷贝数据。</strong>为了在java代码中访问Allocation中的数据，需要使用Allocation的copy方法拷贝到java缓冲区中。这些方法会必要的时候在异步内核和函数调用间做同步。</p>
+</li>
+<li><p><strong>销毁RenderScript context。</strong>可以使用<code>destroy()</code>方法销毁RenderScript context，或者允许RenderScript context对象被垃圾回收。这样使用这个context中的任何对象将抛出异常。</p>
+</li>
+</ol>
+<hr>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/RenderScript/" rel="tag">#RenderScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/08/sublime插件安装/" rel="next" title="sublime插件安装">
+                <i class="fa fa-chevron-left"></i> sublime插件安装
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/09/Android-高斯模糊实现方案/" rel="prev" title="Android-高斯模糊实现方案">
+                Android-高斯模糊实现方案 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/05/09/Android-RenderScript介绍/"
+     data-title="Android_RenderScript介绍"
+     data-content=""
+     data-url="http://zhangqiyang.ren/2016/05/09/Android-RenderScript介绍/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/09/Android-RenderScript介绍/"
+           data-title="Android_RenderScript介绍" data-url="http://zhangqiyang.ren/2016/05/09/Android-RenderScript介绍/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/10182123?v=3&s=140"
+               alt="zhangqiyang" />
+          <p class="site-author-name" itemprop="name">zhangqiyang</p>
+          <p class="site-description motion-element" itemprop="description">征服技术</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/DarklyCoder" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="weibo" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u4EC0_u4E48_u662FRenderScript_uFF1F"><span class="nav-number">1.</span> <span class="nav-text">什么是RenderScript？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5199RenderScript_u5185_u6838"><span class="nav-number">1.1.</span> <span class="nav-text">写RenderScript内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8BBE_u7F6E_u6D6E_u70B9_u7CBE_u5EA6"><span class="nav-number">1.2.</span> <span class="nav-text">设置浮点精度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8BBF_u95EERenderscript_API"><span class="nav-number">1.3.</span> <span class="nav-text">访问Renderscript API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4F7F_u7528RenderScript_u5171_u4EAB_u5E93API"><span class="nav-number">1.4.</span> <span class="nav-text">使用RenderScript共享库API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5728Java_u4EE3_u7801_u4E2D_u4F7F_u7528RenderScript"><span class="nav-number">1.5.</span> <span class="nav-text">在Java代码中使用RenderScript</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2012 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhangqiyang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhangqy"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
