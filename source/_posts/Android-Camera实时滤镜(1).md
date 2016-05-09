@@ -1,11 +1,11 @@
-title: android_camera实时滤镜(1)
+title: Android_Camera实时滤镜(1)
 date: 2016-5-1 16:04:00
 categories: 
-    - android
-    - camera实时滤镜
+    - Android
+    - Camera实时滤镜
 tags: 
-    - android 
-    - camera
+    - Android 
+    - Camera
     - 实时滤镜
 ---
 
@@ -148,7 +148,6 @@ gl_FragColor = texture2D(inputImageTexture, textureCoordinate);
 在实际程序例如GPUImage中，操作顺序如下
 
 1. 创建shader
-
     1）编写Vertex Shader和Fragment Shader源码。      
     2）创建两个shader 实例：GLuint glCreateShader(GLenum type);        
     3）给Shader实例指定源码。glShaderSource        
@@ -168,7 +167,6 @@ gl_FragColor = texture2D(inputImageTexture, textureCoordinate);
         }  
 
 2. 创建program
-
     　　在OpenGL ES中，每个program对象有且仅有一个Vertex Shader对象和一个Fragment Shader对象连接到它。Shader类似于C编译器。Program类似于C链接器。glLinkProgram操作产生最后的可执行程序，它包含最后可以在硬件上执行的硬件指令。
 
     1）创建program ：GLuint glCreateProgram(void)       
@@ -210,15 +208,13 @@ gl_FragColor = texture2D(inputImageTexture, textureCoordinate);
         }  
 
 3. 获取纹理坐标、顶点坐标、纹理等对应id
-
-　　　　通过glGetAttribLocation和glGetUniformLocation获取对应的id
+　　通过glGetAttribLocation和glGetUniformLocation获取对应的id
 
         mGLAttribPosition = GLES20.glGetAttribLocation(mGLProgId, "position"); 
         mGLUniformTexture = GLES20.glGetUniformLocation(mGLProgId, "inputImageTexture");  
         mGLAttribTextureCoordinate = GLES20.glGetAttribLocation(mGLProgId,"inputTextureCoordinate");  
 
 4. 绘制
-
     1）首先设置背景颜色和绘制创建绘制区域、清理当前缓冲区
     2）使用program(glUseProgram)，传递两个矩阵
     3）通过glGenTextures(GLsizei n, GLuint *textures)产生你要操作的纹理对象的id，然后通过glBindTexture绑定并获取纹理id，告诉OpenGL下面对纹理的任何操作都是对它所绑定的纹理对象的，比如glBindTexture(GL_TEXTURE_2D,1)告诉OpenGL下面代码中对2D纹理的任何设置都是针对索引为1的纹理的。通过glTexParameteri设置一些属性。最后通过glTexImage2D根据指定参数，包括RGB数据，生成2D纹理。当第二帧绘制的时候，则不需要重新绑定纹理，使用glTexSubImage2D更新现有纹理即可。

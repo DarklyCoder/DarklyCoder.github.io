@@ -1,9 +1,9 @@
-title: android_基础知识汇总
+title: Android_基础知识汇总
 date: 2016-5-1 16:04:00
 categories: 
-    - android
+    - Android
 tags: 
-    - android 
+    - Android 
     - 基础知识
 ---
 

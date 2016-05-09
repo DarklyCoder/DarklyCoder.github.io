@@ -1,9 +1,9 @@
-title: java中String.format使用
+title: Java中String.format使用
 date: 2013-7-27 18:08:20
 categories: 
-    - java
+    - Java
 tags: 
-    - java 
+    - Java 
     - String format
 ---
 

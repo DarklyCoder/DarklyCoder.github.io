@@ -1,10 +1,10 @@
-title: MediaPlayer状态机
-date: 2013-7-27 18:08:20
+title: Android_MediaPlayer状态机
+date: 2012-4-3 18:08:20
 categories: 
-    - android
+    - Android
     - MediaPlayer
 tags: 
-    - android 
+    - Android 
     - MediaPlayer
     - 状态机
 ---
