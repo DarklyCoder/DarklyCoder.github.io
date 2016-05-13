@@ -5,7 +5,7 @@ categories:
     - Camera实时滤镜
 tags: 
     - Android 
-    - Camera
+    - camera
     - 实时滤镜
 ---
 
