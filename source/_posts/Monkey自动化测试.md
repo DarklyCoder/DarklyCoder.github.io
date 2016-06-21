@@ -9,7 +9,7 @@ tags:
 
 ### 什么是Monkey
 
-  [Monkey](http://developer.android.com/guide/developing/tools/monkey.html)是Android中的一个命令行工具，可以运行在模拟器里或实际设备中。它向系统发送伪随机的用户事件流(如按键输入、触摸屏输入、手势输入等)，实现对正在开发的应用程序进行压力测试。Monkey测试是一种为了测试软件的稳定性、健壮性的快速有效的方法。
+  [Monkey](http://developer.android.com/guide/developing/tools/monkey.html)([镜像](http://wear.techbrood.com/tools/help/monkey.html))是Android中的一个命令行工具，可以运行在模拟器里或实际设备中。它向系统发送伪随机的用户事件流(如按键输入、触摸屏输入、手势输入等)，实现对正在开发的应用程序进行压力测试。Monkey测试是一种为了测试软件的稳定性、健壮性的快速有效的方法。
 
 <!-- more -->
 
