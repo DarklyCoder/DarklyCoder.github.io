@@ -7,12 +7,12 @@ tags:
     - appium 
 ---
 
-### 什么是[appium](http://appium.io/)
+### 什么是appium
 
-1. appium是开源的移动端自动化测试框架；
-2. appium可以测试native/hybrid/mobile web项目；
-3. appium可以测试ios/android应用（当然了，还有firefox os）；
-4. appium是跨平台的，可以用在OS X，Windows以及linux桌面系统上；
+1. [appium][1]是开源的移动端自动化测试框架；
+2. [appium][1]可以测试native/hybrid/mobile web项目；
+3. [appium][1]可以测试ios/android应用（当然了，还有firefox os）；
+4. [appium][1]是跨平台的，可以用在OS X，Windows以及linux桌面系统上；
 
 <!-- more -->
 
@@ -23,7 +23,7 @@ tags:
 
 ### appium client的安装
 
-appium client是对[webdriver](https://github.com/DarklyCoder/webdriver_guide)原生api的一些扩展和封装。它可以帮助我们更容易的写出用例，写出更好懂的用例。
+appium client是对webdriver原生api的一些扩展和封装。它可以帮助我们更容易的写出用例，写出更好懂的用例。
 
 appium client是配合原生的webdriver来使用的，因此二者必须配合使用缺一不可。
 
@@ -162,3 +162,7 @@ android平台特定属性：
 ### 相关参考
 
 [appium简明教程](http://www.yangyanxing.com/article/1266.html)
+
+[webdriver使用](https://github.com/DarklyCoder/webdriver_guide)
+
+[1]: http://appium.io/     "appium"
