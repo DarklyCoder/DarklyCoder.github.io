@@ -119,7 +119,6 @@ font:
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
   GitHub: https://github.com/DarklyCoder
-  Weibo: weibo
 
 # Social Links Icons
 # Icon Mapping:
@@ -179,8 +178,10 @@ links_title: Links
 links_layout: block
 #links_layout: inline
 links:
-  Title: http://example.com/
-
+  Gracker: http://androidperformance.com/
+  胡凯: http://hukai.me/
+  罗升阳: http://blog.csdn.net/Luoshengyang?viewmode=contents
+  启舰: http://blog.csdn.net/harvic880925
 # ---------------------------------------------------------------
 # Misc Theme Settings
 # ---------------------------------------------------------------
