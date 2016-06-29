@@ -68,3 +68,5 @@ View 提供的获取坐标方法`getTop()`、`getLeft()`、`getRight()` 和 `get
 #### 使用ViewDragHelper
 
 [Android ViewDragHelper完全解析](http://blog.csdn.net/lmj623565791/article/details/46858663)
+
+[Android ViewDragHelper源码解析](http://www.cnblogs.com/lqstayreal/archive/2015/05/13/4500219.html)
