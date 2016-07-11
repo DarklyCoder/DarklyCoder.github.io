@@ -135,6 +135,30 @@ Contentprovider的onCreate方法在Application的onCreate方法前面 [android �
 * [Android 自定义ViewGroup 实战篇 -> 实现FlowLayout](http://blog.csdn.net/lmj623565791/article/details/38352503)
 * [Android中自定义View、ViewGroup理论基础详解](http://blog.csdn.net/iispring/article/details/51314039)
 
+### 动画
+
+* [alpha、scale、translate、rotate、set的xml属性及用法](http://blog.csdn.net/harvic880925/article/details/39996643)
+* [Interpolator插值器](http://blog.csdn.net/harvic880925/article/details/40049763)
+* [代码生成alpha、scale、translate、rotate、set及插值器动画](http://blog.csdn.net/harvic880925/article/details/40117115)
+* [ValueAnimator基本使用](http://blog.csdn.net/harvic880925/article/details/50525521)
+* [ValueAnimator高级进阶（一）](http://blog.csdn.net/harvic880925/article/details/50546884)
+* [ValueAnimator高级进阶（二）](http://blog.csdn.net/harvic880925/article/details/50549385)
+* [ObjectAnimator基本使用](http://blog.csdn.net/harvic880925/article/details/50598322)
+* [PropertyValuesHolder与Keyframe](http://blog.csdn.net/harvic880925/article/details/50752838)
+* [联合动画的代码实现](http://blog.csdn.net/harvic880925/article/details/50759059)
+* [联合动画的XML实现与使用示例](http://blog.csdn.net/harvic880925/article/details/50763286)
+* [layoutAnimation与gridLayoutAnimation](http://blog.csdn.net/harvic880925/article/details/50785786)
+* [animateLayoutChanges与LayoutTransition](http://blog.csdn.net/harvic880925/article/details/50985596)
+* [实现ListView Item进入动画](http://blog.csdn.net/harvic880925/article/details/50988685)
+* [activity与fragment切换动画](http://coderrobin.com/2015/01/29/activity%E4%B8%8Efragment%E5%88%87%E6%8D%A2%E5%8A%A8%E7%94%BB/)
+* [酷炫的Activity切换动画](http://blog.csdn.net/huachao1001/article/details/51659963)
+
+### WindowManager
+
+* [用WindowManager实现炫酷的悬浮迷你音乐盒（上）](http://www.jianshu.com/p/95ceb0a2ed27)
+* [用WindowManager实现炫酷的悬浮迷你音乐盒（下）](http://www.jianshu.com/p/7bb5dbaff7de)
+* [Android无需权限显示悬浮窗, 兼谈逆向分析app](http://www.jianshu.com/p/167fd5f47d5c)
+
 ### 内存优化
 
 #### 系统GC回收过程及原理
@@ -169,7 +193,7 @@ Contentprovider的onCreate方法在Application的onCreate方法前面 [android �
 * [Android性能优化典范（三）](http://hukai.me/android-performance-patterns-season-3/)
 * [Android性能优化典范（四）](http://hukai.me/android-performance-patterns-season-4/)
 * [Android性能优化典范（五）](http://hukai.me/android-performance-patterns-season-5/)
-* [Android应用性能优化个人总结–图形优化](https://mp.weixin.qq.com/s?__biz=MzAxMzYyNDkyNA==&mid=403778409&idx=1&sn=2955f5209f2cb46c327167e9f558013c&scene=0&key=710a5d99946419d93bd87693b2fb201a979a3f06f49072f49e0e5dd05b91de2dbe204e56cbcd8c71cac94e931791f5f3&ascene=0&uin=ODU2NjQ0ODgx&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.11.4+build(15E65)
+* [Android应用性能优化个人总结–图形优化](https://mp.weixin.qq.com/s?__biz=MzAxMzYyNDkyNA==&mid=403778409&idx=1&sn=2955f5209f2cb46c327167e9f558013c)
 
 #### 内存泄露详解及总结
 
@@ -214,9 +238,9 @@ Contentprovider的onCreate方法在Application的onCreate方法前面 [android �
 
 #### 蓝牙2.0
 
-1. Bluetooth介绍及原理
-2. Bluetooth通信方式
-3. Bluetooth使用方法
+* [Android深入浅出系列之Bluetooth—蓝牙操作(一)](http://www.cnblogs.com/menglin2010/archive/2011/11/02/2232923.html)
+* [Android深入浅出系列之Bluetooth—蓝牙操作(二)](http://www.cnblogs.com/menglin2010/archive/2011/11/03/2234344.html)
+* [Android中蓝牙的基本使用----BluetoothAdapter类简介](http://blog.csdn.net/qinjuning/article/details/7726093)
 
 #### 蓝牙4.0
 
@@ -276,7 +300,6 @@ Provider，ORMLite，GreenDao [Provider，ORMLite，GreenDao的实现，并且�
 ### Android资源混淆
 
 * [美团Android资源混淆保护实践](http://tech.meituan.com/mt-android-resource-obfuscation.html)
-
 
 ### 相关LINK
 
