@@ -1,0 +1,828 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="appium," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="什么是appium
+appium是开源的移动端自动化测试框架；
+appium可以测试native/hybrid/mobile web项目；
+appium可以测试ios/android应用（当然了，还有firefox os）；
+appium是跨平台的，可以用在OS X，Windows以及linux桌面系统上；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="appium自动化测试">
+<meta property="og:url" content="http://zhangqiyang.ren/2016/06/22/appium自动化测试/index.html">
+<meta property="og:site_name" content="zhangqiyang的小站">
+<meta property="og:description" content="什么是appium
+appium是开源的移动端自动化测试框架；
+appium可以测试native/hybrid/mobile web项目；
+appium可以测试ios/android应用（当然了，还有firefox os）；
+appium是跨平台的，可以用在OS X，Windows以及linux桌面系统上；">
+<meta property="og:updated_time" content="2016-10-15T12:06:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="appium自动化测试">
+<meta name="twitter:description" content="什么是appium
+appium是开源的移动端自动化测试框架；
+appium可以测试native/hybrid/mobile web项目；
+appium可以测试ios/android应用（当然了，还有firefox os）；
+appium是跨平台的，可以用在OS X，Windows以及linux桌面系统上；">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6281570686548854000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> appium自动化测试 | zhangqiyang的小站 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5d9f062022728d2ef3b4d5e23e106d38";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">zhangqiyang的小站</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">追梦者</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                appium自动化测试
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-22T10:30:00+08:00" content="2016-06-22">
+              2016-06-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/测试/" itemprop="url" rel="index">
+                    <span itemprop="name">测试</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/22/appium自动化测试/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/22/appium自动化测试/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="u4EC0_u4E48_u662Fappium"><a href="#u4EC0_u4E48_u662Fappium" class="headerlink" title="什么是appium"></a>什么是appium</h3><ol>
+<li><a href="http://appium.io/" title="appium" target="_blank" rel="external">appium</a>是开源的移动端自动化测试框架；</li>
+<li><a href="http://appium.io/" title="appium" target="_blank" rel="external">appium</a>可以测试native/hybrid/mobile web项目；</li>
+<li><a href="http://appium.io/" title="appium" target="_blank" rel="external">appium</a>可以测试ios/android应用（当然了，还有firefox os）；</li>
+<li><a href="http://appium.io/" title="appium" target="_blank" rel="external">appium</a>是跨平台的，可以用在OS X，Windows以及linux桌面系统上；</li>
+</ol>
+<a id="more"></a>
+<h3 id="appium_server_u7684_u5B89_u88C5"><a href="#appium_server_u7684_u5B89_u88C5" class="headerlink" title="appium server的安装"></a>appium server的安装</h3><ol>
+<li>安装nodejs；</li>
+<li>使用<code>npm i appium -g</code>安装appium server。</li>
+</ol>
+<h3 id="appium_client_u7684_u5B89_u88C5"><a href="#appium_client_u7684_u5B89_u88C5" class="headerlink" title="appium client的安装"></a>appium client的安装</h3><p>appium client是对webdriver原生api的一些扩展和封装。它可以帮助我们更容易的写出用例，写出更好懂的用例。</p>
+<p>appium client是配合原生的webdriver来使用的，因此二者必须配合使用缺一不可。</p>
+<h4 id="ruby_u7BC7_uFF08_u4E00_u5B9A_u8981_u5728_u7EBF_u5B89_u88C5_uFF09"><a href="#ruby_u7BC7_uFF08_u4E00_u5B9A_u8981_u5728_u7EBF_u5B89_u88C5_uFF09" class="headerlink" title="ruby篇（一定要在线安装）"></a>ruby篇（一定要在线安装）</h4><p>ruby的appium client叫做appium lib，为什么是这样就不解释了，总之是历史原因。</p>
+<p>首先update rubygem和bundler(说老实话，真的不需要，但官方文档上这么写)</p>
+<pre><code>gem update –system;
+gem update bundler
+</code></pre><p>然后使用gem安装</p>
+<pre><code>gem uninstall -aIx appium_lib ;(这个也不是必须的)
+gem install –no-rdoc –no-ri appium_lib
+</code></pre><h4 id="python_u7BC7_uFF08_u5C3D_u91CF_u5728_u7EBF_u5B89_u88C5_uFF09"><a href="#python_u7BC7_uFF08_u5C3D_u91CF_u5728_u7EBF_u5B89_u88C5_uFF09" class="headerlink" title="python篇（尽量在线安装）"></a>python篇（尽量在线安装）</h4><p>推荐使用pip安装</p>
+<pre><code>pip install Appium-Python-Client
+</code></pre><p>当然了也可以在Pipy上<a href="https://pypi.python.org/pypi/Appium-Python-Client" target="_blank" rel="external">下载源码安装</a></p>
+<pre><code>tar -xvf Appium-Python-Client-X.X.tar.gz（windows上用7zip可以解压）
+cd Appium-Python-Client-X.X
+python setup.py install
+</code></pre><p>最后，也可以通过github安装（要git客户端）</p>
+<pre><code>git clone git@github.com:appium/python-client.git
+cd python-client
+python setup.py install
+</code></pre><h4 id="java_u7BC7_uFF08_u5728_u7EBF_u5B89_u88C5_uFF09"><a href="#java_u7BC7_uFF08_u5728_u7EBF_u5B89_u88C5_uFF09" class="headerlink" title="java篇（在线安装）"></a>java篇（在线安装）</h4><p>java的话用maven安装就可以了</p>
+<pre><code>io.appium
+java-client
+4.0.0
+</code></pre><p>当然了，也可以自己<a href="http://search.maven.org/#search|gav|1|g:&quot;io.appium&quot; AND a:&quot;java-client&quot;" target="_blank" rel="external">下载jar包</a>，请自行选择最新版本。</p>
+<h3 id="appium_u6D4B_u8BD5"><a href="#appium_u6D4B_u8BD5" class="headerlink" title="appium测试"></a>appium测试</h3><ol>
+<li><p>安装好后运行appium,在cmd中输入<code>appium</code>；</p>
+<pre><code>D:\Appium-Python-Client-0.22&gt;appium
+[Appium] Welcome to Appium v1.5.3
+[Appium] Appium REST http interface listener started on 0.0.0.0:4723
+</code></pre></li>
+<li><p>以android平台为例，编写<code>appiumTest.py</code>；</p>
+<pre><code>from appium import webdriver
+
+desired_caps = {}
+desired_caps[&apos;platformName&apos;] = &apos;Android&apos;
+desired_caps[&apos;platformVersion&apos;] = &apos;6.0&apos;
+desired_caps[&apos;deviceName&apos;] = &apos;huawei-huawei_p7_l07-5T2SQL151Y003684&apos;
+desired_caps[&apos;appPackage&apos;] = &apos;com.android.demo&apos;
+desired_caps[&apos;appActivity&apos;] = &apos;.SplashActivity&apos;
+
+driver = webdriver.Remote(&apos;http://localhost:4723/wd/hub&apos;, desired_caps)
+</code></pre></li>
+<li><p>连接手机，运行<code>appiumTest.py</code>脚本。</p>
+</li>
+</ol>
+<h3 id="appium_u7684_u76F8_u5173_u6982_u5FF5"><a href="#appium_u7684_u76F8_u5173_u6982_u5FF5" class="headerlink" title="appium的相关概念"></a>appium的相关概念</h3><h4 id="Client/Server_u67B6_u6784"><a href="#Client/Server_u67B6_u6784" class="headerlink" title="Client/Server架构"></a>Client/Server架构</h4><p>appium的核心其实是一个暴露了一系列REST API的server。</p>
+<p>这个server的功能其实很简单：监听一个端口，然后接收由client发送来的command。翻译这些command，把这些command转成移动设备可以理解的形式发送给移动设备，然后移动设备执行完这些command后把执行结果返回给appium server，appium server再把执行结果返回给client。</p>
+<p>在这里client其实就是发起command的设备，一般来说就是我们代码执行的机器，执行appium测试代码的机器。狭义点理解，可以把client理解成是代码，这些代码可以是java/ruby/python/js的，只要它实现了webdriver标准协议就可以。</p>
+<p>这样的设计思想带来了一些好处：</p>
+<ol>
+<li>可以带来多语言的支持；</li>
+<li>可以把server放在任意机器上，哪怕是云服务器都可以；（是的，appium和webdriver天生适合云测试）</li>
+</ol>
+<h4 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h4><p>session就是一个会话，在webdriver/appium，你的所有工作永远都是在session start后才可以进行的。一般来说，通过POST /session这个URL，然后传入Desired Capabilities就可以开启session了。</p>
+<p>开启session后，会返回一个全局唯一的session id，以后几乎所有的请求都必须带上这个session id，因为这个seesion id代表了你所打开的浏览器或者是移动设备的模拟器。</p>
+<p>进一步思考一下，由于session id是全局唯一，那么在同一台机器上启动多个session就变成了可能，这也就是selenium gird所依赖的具体理论根据。</p>
+<h4 id="Desired_Capabilities"><a href="#Desired_Capabilities" class="headerlink" title="Desired Capabilities"></a>Desired Capabilities</h4><p>Desired Capabilities携带了一些配置信息。从本质上讲，这个东东是key-value形式的对象。你可以理解成是java里的map，python里的字典，ruby里的hash以及js里的json对象。实际上Desired Capabilities在传输时就是json对象。</p>
+<p>Desired Capabilities最重要的作用是告诉server本次测试的上下文。这次是要进行浏览器测试还是移动端测试？如果是移动端测试的话是测试android还是ios，如果测试android的话那么我们要测试哪个app？ server的这些疑问Desired Capabilities都必须给予解答，否则server不买账，自然就无法完成移动app或者是浏览器的启动。</p>
+<h4 id="Appium_Server"><a href="#Appium_Server" class="headerlink" title="Appium Server"></a>Appium Server</h4><p>这就是每次我们在命令行用appium命令打开的东西。</p>
+<h4 id="Appium_Clients"><a href="#Appium_Clients" class="headerlink" title="Appium Clients"></a>Appium Clients</h4><p>由于原生的webdriver api是为web端设计的，因此在移动端用起来会有点不伦不类。appium官方提供了一套appium client，涵盖多种语言ruby/java/python，在我看来ruby client是实现最好的。在测试的时候，一般要使用这些client库去替换原生的webdriver库。这实际上不是替换，算是client对原生webdriver进行了一些移动端的扩展，加入了一些方便的方法，比如swipe之类，appium client让我们可以更方便的写出可读性更好的测试用例。</p>
+<h4 id="Appium-app_2C_Appium-exe"><a href="#Appium-app_2C_Appium-exe" class="headerlink" title="Appium.app, Appium.exe"></a>Appium.app, Appium.exe</h4><p>appium server的GUI版本，前者用在osx上，后者是windows上。可视化、不需要装node，可以看app的UI结构是这个东东的卖点。</p>
+<h3 id="Desired_Capabilities_u8BE6_u89E3"><a href="#Desired_Capabilities_u8BE6_u89E3" class="headerlink" title="Desired Capabilities详解"></a>Desired Capabilities详解</h3><p>Desired Capabilities在启动session的时候是必须提供的。</p>
+<p>Desired Capabilities本质上是key value的对象，它告诉appium server这样一些事情：</p>
+<ul>
+<li>本次测试是启动浏览器还是启动移动设备？</li>
+<li>是启动andorid还是启动ios？</li>
+<li>启动android时，app的package是什么？</li>
+<li>启动android时，app的activity是什么？</li>
+</ul>
+<p>Appium的Desired Capabilities是扩展了webdriver的Desired Capabilities的，下面的一些通用配置是需要指定的：</p>
+<ul>
+<li>automationName：使用哪种自动化引擎。appium（默认）还是Selendroid？</li>
+<li>platformName：使用哪种移动平台。iOS, Android, orFirefoxOS？</li>
+<li>deviceName：启动哪种设备，是真机还是模拟器？iPhone Simulator, iPad Simulator, iPhone Retina 4-inch, Android Emulator, Galaxy S4, etc…</li>
+<li>app：应用的绝对路径，注意一定是绝对路径。如果指定了appPackage和appActivity的话，这个属性是可以不设置的。另外这个属性和browserName属性是冲突的。</li>
+<li>browserName：移动浏览器的名称。比如Safari’ for iOS and ‘Chrome’, ‘Chromium’, or ‘Browser’ for Android；与app属性互斥。</li>
+<li>udid：物理机的id。比如1ae203187fc012g。</li>
+</ul>
+<p>android平台特定属性：</p>
+<ul>
+<li>appActivity：待测试的app的Activity名字。比如MainActivity, .Settings。注意，原生app的话要在activity前加个”.”。</li>
+<li>appPackage：待测试的app的java package。比如com.example.android.myApp, com.android.settings。</li>
+</ul>
+<h3 id="u76F8_u5173_u53C2_u8003"><a href="#u76F8_u5173_u53C2_u8003" class="headerlink" title="相关参考"></a>相关参考</h3><p><a href="http://www.yangyanxing.com/article/1266.html" target="_blank" rel="external">appium简明教程</a></p>
+<p><a href="https://github.com/DarklyCoder/webdriver_guide" target="_blank" rel="external">webdriver使用</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/appium/" rel="tag">#appium</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/21/MonkeyRunner自动化测试/" rel="next" title="MonkeyRunner自动化测试">
+                <i class="fa fa-chevron-left"></i> MonkeyRunner自动化测试
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/22/@SmallTest-@MedimuTest-@LargeTest注解/" rel="prev" title="@SmallTest-@MedimuTest-@LargeTest注解">
+                @SmallTest-@MedimuTest-@LargeTest注解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/06/22/appium自动化测试/"
+     data-title="appium自动化测试"
+     data-content=""
+     data-url="http://zhangqiyang.ren/2016/06/22/appium自动化测试/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/22/appium自动化测试/"
+           data-title="appium自动化测试" data-url="http://zhangqiyang.ren/2016/06/22/appium自动化测试/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/10182123?v=3&s=140"
+               alt="zhangqiyang" />
+          <p class="site-author-name" itemprop="name">zhangqiyang</p>
+          <p class="site-description motion-element" itemprop="description">征服技术</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/DarklyCoder" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://androidperformance.com/" title="Gracker" target="_blank">Gracker</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://hukai.me/" title="胡凯" target="_blank">胡凯</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/Luoshengyang?viewmode=contents" title="罗升阳" target="_blank">罗升阳</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/harvic880925" title="启舰" target="_blank">启舰</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u4EC0_u4E48_u662Fappium"><span class="nav-number">1.</span> <span class="nav-text">什么是appium</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#appium_server_u7684_u5B89_u88C5"><span class="nav-number">2.</span> <span class="nav-text">appium server的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#appium_client_u7684_u5B89_u88C5"><span class="nav-number">3.</span> <span class="nav-text">appium client的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ruby_u7BC7_uFF08_u4E00_u5B9A_u8981_u5728_u7EBF_u5B89_u88C5_uFF09"><span class="nav-number">3.1.</span> <span class="nav-text">ruby篇（一定要在线安装）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python_u7BC7_uFF08_u5C3D_u91CF_u5728_u7EBF_u5B89_u88C5_uFF09"><span class="nav-number">3.2.</span> <span class="nav-text">python篇（尽量在线安装）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java_u7BC7_uFF08_u5728_u7EBF_u5B89_u88C5_uFF09"><span class="nav-number">3.3.</span> <span class="nav-text">java篇（在线安装）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#appium_u6D4B_u8BD5"><span class="nav-number">4.</span> <span class="nav-text">appium测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#appium_u7684_u76F8_u5173_u6982_u5FF5"><span class="nav-number">5.</span> <span class="nav-text">appium的相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Client/Server_u67B6_u6784"><span class="nav-number">5.1.</span> <span class="nav-text">Client/Server架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Session"><span class="nav-number">5.2.</span> <span class="nav-text">Session</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Desired_Capabilities"><span class="nav-number">5.3.</span> <span class="nav-text">Desired Capabilities</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Appium_Server"><span class="nav-number">5.4.</span> <span class="nav-text">Appium Server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Appium_Clients"><span class="nav-number">5.5.</span> <span class="nav-text">Appium Clients</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Appium-app_2C_Appium-exe"><span class="nav-number">5.6.</span> <span class="nav-text">Appium.app, Appium.exe</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Desired_Capabilities_u8BE6_u89E3"><span class="nav-number">6.</span> <span class="nav-text">Desired Capabilities详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u76F8_u5173_u53C2_u8003"><span class="nav-number">7.</span> <span class="nav-text">相关参考</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2012 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhangqiyang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhangqy"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
